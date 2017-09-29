@@ -1,0 +1,47 @@
+April 2011	Boston 	X		X	X	Cat 3
+July 2011	Las Vegas	X	X	X	X	Cat 4
+February 2012	Boston	X	X	X	X	Cat 4
+August 2012	Los Angeles		X	X	X	Cat 3
+February 2013	Las Vegas		X		X	Cat 2
+March 2013	San Francisco	X			X	Cat 2
+July 2013	Boston			X	X	Cat 2
+July 2013	San Francisco		X	X	X	Cat 3
+August 2013	Chicago	X	X	X	X	Cat 4
+October 2013	San Francisco		X		X	Cat 2
+January 2014	Las Vegas		X		X	Cat 2
+February 2014	New Orleans	X	X	X	X	Cat 4
+July 2014 	Chicago	X		X		Cat 2
+September 2014	Yellowstone	X	X	X	X	Cat 4
+October 2014	Chicago	X			X	Cat 2
+March 2015	Washington D.C.	X		X	X	Cat 3
+March 2015	Austin	X	X	X	X	Cat 4
+April 2015	Boston			X	X	Cat 2
+April 2015	San Francisco	X			X	Cat 2
+May 2015	Monterey		X		X	Cat 2
+May 2015	Boston			X	X	Cat 2
+July 2015 	Minnesota 	X	X	X	X	Cat 4
+August 2015	Chicago	X	X			Cat 2
+September 2015	San Francisco	X			X	Cat 2
+September 2015	Boston			X	X	Cat 2
+November 2015	San Francisco	X			X	Cat 2
+November 2015	Los Angeles	X	X			Cat 2
+December 2015	Boston		X	X		Cat 2
+January 2016	San Francisco	X			X	Cat 2
+February 2016	Greens Island	X	X	X	X	Cat 4
+March 2016	San Francisco	X			X	Cat 2
+April 2016	Chicago	X		X		Cat 2
+April 2016	Las Vegas		X		X	Cat 2
+April 2016	Boston			X	X	Cat 2
+April 2016 	San Francisco	X			X	Cat 2
+June 2016	Charleston	X	X	X	X	Cat 4
+November 2016	Boston			X	X	Cat 2
+December 2016	San Francisco	X			X	Cat 2
+January 2017	San Francisco	X			X	Cat 2
+January 2017	Las Vegas	X	X	X	X	Cat 4
+January 2017	San Francisco	X	X			
+March 2017	Mountain View	X			X	Cat 2
+March 2017	San Francisco			X	X	Cat 2
+April 2017	San Francisco	X			X	Cat 2
+July 2017	Boston	X		X		Cat 2
+July 2017	Cabo	X	X	X	X	Cat 4
+Las Vegas 2017	Las Vegas		X		X	Cat 2

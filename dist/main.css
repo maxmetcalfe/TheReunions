@@ -1,0 +1,139 @@
+#map {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  bottom: 0;
+  width: 79%;
+}
+
+.side-panel {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  box-shadow: 0px 0px 8px rgb(90, 90, 90);
+  z-index: 1;
+}
+
+.side-panel .btn:first-of-type {
+  margin-top: 20px;
+}
+
+.side-panel .btn:last-of-type {
+  margin-bottom: 20px;
+}
+
+.member-table {
+  width: 100%;
+  text-align: center;
+}
+
+.person-icon {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 900;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 800px;
+  border-color: black;
+  margin-bottom: 20px;
+  background-image: url("../img/max.png");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.coin-box {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.coin-box .coin {
+  position: relative;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(50, 50, 50);
+  line-height: 25px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 1px 1px 1px rgb(150, 150, 150);
+}
+
+.coin-box .coin:hover {
+  background-color: red;
+}
+
+/* Cat 4 Reunion */
+.coin-box .coin:first-of-type {
+  background-color: gold;
+  border-color: rgb(160, 130, 100);
+  margin-left: 90px;
+}
+
+/* Cat 3 Reunion */
+.coin-box .coin:nth-child(2) {
+  background-color: silver;
+  border-color: rgb(120, 120, 120);
+}
+
+/* Cat 2 Reunion */
+.coin-box .coin:last-of-type {
+  background-color: rgb(190, 160, 130);
+  border-color: rgb(160, 130, 100);
+  margin-right: 90px;
+
+}
+
+/* Marker Styles */
+.marker {
+  width: 10px;
+  height: 10px;
+  background-color: #c50;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.marker:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, .1);
+  top: 25%;
+  left: 25%;
+  border-radius: 50%;
+}
+
+/* Cat 4 Reunion */
+.four {
+  background-color: gold;
+  border-color: rgb(160, 130, 100);
+}
+
+/* Cat 3 Reunion */
+.three {
+  background-color: silver;
+  border-color: rgb(120, 120, 120);
+}
+
+/* Cat 2 Reunion */
+.two {
+  background-color: rgb(190, 160, 130);
+  border-color: rgb(160, 130, 100);
+}
