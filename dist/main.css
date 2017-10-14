@@ -19,11 +19,32 @@
   z-index: 1;
 }
 
-.side-panel .btn:first-of-type {
+.side-panel table {
+  color: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel td {
+  color: green;
+  display: block;
+  height: 100%;
+  line-height: 100px;
+  text-align: center;
+}
+
+.side-panel tr {
+  text-align: center;
+  height: 200px;
+  display: block;
+}
+
+.side-panel tr:first-of-type {
   margin-top: 20px;
 }
 
-.side-panel .btn:last-of-type {
+.side-panel tr:last-of-type {
   margin-bottom: 20px;
 }
 
@@ -32,7 +53,7 @@
   text-align: center;
 }
 
-.person-icon {
+.member-icon {
   position: relative;
   left: 50%;
   transform: translate(-50%);

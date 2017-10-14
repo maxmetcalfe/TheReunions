@@ -1,11 +1,9 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-import MemberTable from './components/MemberTable';
+import App from './components/App';
 
-var members = ["m", "g", "j", "d"];
-
-ReactDOM.render(<MemberTable members=members />, document.getElementById("panel"));
+ReactDOM.render(<App members={["m", "g", "d", "j"]} />, document.getElementById("panel"));
 
 // MapBox info
 var mapStyle = "mapbox://styles/mapbox/basic-v9";

@@ -23,8 +23,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist',
-    hot: true
+    contentBase: path.join(__dirname, "dist"),
+    hot: true,
+    port: 8080
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
