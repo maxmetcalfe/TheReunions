@@ -68,7 +68,6 @@
   border-radius: 800px;
   border-color: black;
   margin-bottom: 20px;
-  background-image: url("../img/max.png");
   background-size: 100px;
   background-repeat: no-repeat;
   background-position: center;
@@ -86,10 +85,10 @@
   text-align: center;
   width: 30px;
   height: 30px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: rgb(50, 50, 50);
-  line-height: 25px;
+  line-height: 30px;
   border-radius: 50%;
   border-style: solid;
   border-width: 2px;

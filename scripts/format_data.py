@@ -8,8 +8,8 @@ import requests, json
 
 # Define paths for data files.
 input_data_path = "data/input_data.txt"
-output_reunions_path = "src/js/reunions.js"
-output_summary_path = "src/js/summaryCounts.js"
+output_reunions_path = "src/data/reunions.js"
+output_summary_path = "src/data/summaryCounts.js"
 
 # Define an empty dictionary for each member.
 m_reunions = { "four": 0, "three": 0, "two": 0 }

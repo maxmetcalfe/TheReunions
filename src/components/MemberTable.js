@@ -1,47 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import MemberCell from './MemberCell';
 
-const types = ["four", "three", "two"];
+class MemberTable extends Component {
 
-const TableRow = ({member}) => (
-  <tr key={member}>
-    <td key={member}>
-      <MemberIcon member={member} />
-      <CoinBox member={member} />
-    </td>
-  </tr>
-)
-
-const MemberIcon = ({member}) => (
-  <div key={member} className="member-icon"></div>
-)
-
-const CoinBox = ({member}) => (
-  <div key={member} className="coin-box">
-    {types.map((type) => (
-      <Coin type={type} />
-    ))}
-  </div>
-)
-
-const Coin = ({type}) => (
-  <div key={type} className="coin"></div>
-)
-
-function MemberTable(props) {
-  return (
-    <table id="member-table">
-      <tbody>
-      {props.members.map((member) => (
-        <TableRow key={member} member={member} />
-      ))}
-      </tbody>
-    </table>
-  );
-};
-
-MemberTable.propTypes = {
-  members: PropTypes.array,
-};
+  render() {
+    return (
+      <table id="member-table">
+        <tbody>
+          {Object.keys(this.props.summaryCounts).map((name) => (
+              <MemberCell key={name} member={name} counts={this.props.summaryCounts[name]} />
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+}
 
 export default MemberTable;

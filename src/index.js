@@ -1,9 +1,14 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-import App from './components/App';
+var summaryCounts = require("./data/summaryCounts.js");
+var reunions = require("./data/reunions.js");
 
-ReactDOM.render(<App members={["m", "g", "d", "j"]} />, document.getElementById("panel"));
+require("./main.css");
+
+import App from "./components/App";
+
+ReactDOM.render(<App summaryCounts={summaryCounts} />, document.getElementById("panel"));
 
 // MapBox info
 var mapStyle = "mapbox://styles/mapbox/basic-v9";
@@ -19,9 +24,9 @@ var map = new mapboxgl.Map({
 });
 map.addControl(new mapboxgl.NavigationControl());
 
-map.on('load', function() {
+map.on("load", function() {
   reunions.features.forEach(function(marker) {
-    var el = document.createElement('div');
+    var el = document.createElement("div");
     el.className = "marker";
     el.classList.add(marker.properties.category);
     

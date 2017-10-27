@@ -1,14 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React, { Component } from "react";
 import MemberTable from './MemberTable';
 
-function App(props) {
-  return <MemberTable members={props.members}/>
-};
+class App extends Component {
 
-App.propTypes = {
-  members: PropTypes.array,
-};
+  render() {
+    return <MemberTable summaryCounts={this.props.summaryCounts} />
+  }
+}
 
 export default App;
