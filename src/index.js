@@ -11,7 +11,7 @@ import App from "./components/App";
 ReactDOM.render(<App summaryCounts={summaryCounts} />, document.getElementById("panel"));
 
 // MapBox info
-var mapStyle = "mapbox://styles/mapbox/basic-v9";
+var mapStyle = "mapbox://styles/mapbox/dark-v9";
 var startingZoom = 10;
 var startingCenter = [-90.0715323, 29.95106579999999];
 
