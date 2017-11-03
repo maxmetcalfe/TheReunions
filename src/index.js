@@ -12,8 +12,8 @@ ReactDOM.render(<App summaryCounts={summaryCounts} />, document.getElementById("
 
 // MapBox info
 var mapStyle = "mapbox://styles/mapbox/dark-v9";
-var startingZoom = 10;
-var startingCenter = [-90.0715323, 29.95106579999999];
+var startingZoom = 3;
+var startingCenter = [-97.314835, 37.697948];
 
 mapboxgl.accessToken = "pk.eyJ1IjoibWF4bWV0Y2FsZmUiLCJhIjoiY2o3aWhnazV5MXR3ZTJ3cXViYXRucWJocCJ9.b1B3HrGStBqybxmCEafK0Q"
 var map = new mapboxgl.Map({
