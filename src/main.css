@@ -3,14 +3,15 @@
   top: 0;
   left: 300px;
   bottom: 0;
-  width: 79%;
+  width: 100%;
+  height: 100%;
 }
 
 .side-panel {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: white;
+  background-color: rgba(5, 5, 5, 0.8);
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -64,9 +65,9 @@
   text-align: center;
   font-weight: 900;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-radius: 800px;
-  border-color: black;
+  border-color: rgb(50,205,50);
   margin-bottom: 20px;
   background-size: 100px;
   background-repeat: no-repeat;
@@ -86,13 +87,11 @@
   width: 30px;
   height: 30px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 800;
   color: rgb(50, 50, 50);
   line-height: 30px;
-  border-radius: 50%;
   border-style: solid;
   border-width: 2px;
-  box-shadow: 1px 1px 1px rgb(150, 150, 150);
 }
 
 .coin-box .coin:hover {
@@ -101,21 +100,21 @@
 
 /* Cat 4 Reunion */
 .coin-box .coin:first-of-type {
-  background-color: gold;
   border-color: rgb(160, 130, 100);
+  color: rgb(160, 130, 100);
   margin-left: 90px;
 }
 
 /* Cat 3 Reunion */
 .coin-box .coin:nth-child(2) {
-  background-color: silver;
   border-color: rgb(120, 120, 120);
+  color: rgb(120, 120, 120);
 }
 
 /* Cat 2 Reunion */
 .coin-box .coin:last-of-type {
-  background-color: rgb(190, 160, 130);
   border-color: rgb(160, 130, 100);
+  color: rgb(160, 130, 100);
   margin-right: 90px;
 
 }

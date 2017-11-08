@@ -3,9 +3,10 @@ import React, { Component } from "react";
 class MemberIcon extends Component {
 
   render() {
+    var text = this.props.text.toUpperCase();
     return (
       <div className="member-icon">
-        {this.props.text}
+        {text}
       </div>
     );
   }
