@@ -5,7 +5,7 @@ class MemberTable extends Component {
 
   render() {
     return (
-      <table id="member-table">
+      <table className="member-table">
         <tbody>
           {Object.keys(this.props.summaryCounts).map((name) => (
               <MemberCell key={name} member={name} counts={this.props.summaryCounts[name]} />
