@@ -8,14 +8,17 @@ import requests, json
 
 # Define paths for data files.
 input_data_path = "data/input_data.txt"
-output_reunions_path = "src/data/reunions.js"
-output_summary_path = "src/data/summaryCounts.js"
+output_reunions_path = "src/data/reunionData.js"
+output_summary_path = "src/data/countData.js"
 
 # Define an empty dictionary for each member.
 m_reunions = { "four": 0, "three": 0, "two": 0 }
 j_reunions = { "four": 0, "three": 0, "two": 0 }
 g_reunions = { "four": 0, "three": 0, "two": 0 }
 d_reunions = { "four": 0, "three": 0, "two": 0 }
+
+# Define an empty dictionary for the reunions for member lookup.
+reunions_for_member = { "m": [], "j": [], "g": [], "d": [] }
 
 # Define a mapping between the member and his column in the input data.
 members = { "m": 2, "j": 3, "g": 4, "d": 5 }
@@ -42,10 +45,12 @@ for line in data_file:
     reunion_cat = typeName[str(line_split.count("X"))].replace(" ", "")
     location = line_split[1].replace(" ", "")
     name = line_split[0].replace(" ", "")
-    reunions.append({ "category": reunion_cat, "location": location, "name": name })
+    element_id = name.lower() + reunion_cat.upper()
+    reunions.append({ "category": reunion_cat, "location": location, "name": name, "element_id": element_id })
     for m in members.keys():
         count_index = members[m]     
         if line_split[int(count_index)] == "X":
+            reunions_for_member[m].append(element_id)
             eval(m + "_reunions")[reunion_cat] += 1
 
 # Write out the summary info to output_summary_path.
@@ -68,12 +73,17 @@ for r in reunions:
     coordinates = response["results"][0]["geometry"]["location"]
     latitude = coordinates["lat"]
     longitude = coordinates["lng"]
-    my_feature = Feature(geometry=Point((longitude, latitude)), properties={"category": r["category"], "title": r["location"]})
+    my_feature = Feature(geometry=Point((longitude, latitude)), properties={"category": r["category"], "title": r["location"], "element_id": r["element_id"]})
     geojson_features.append(my_feature)
 
 feature_collection = FeatureCollection(geojson_features)
 
 # Write reuniuons GeoJSON to file.
 reunions_js_file.write(str(feature_collection))
+reunions_js_file.write(";")
+
+# Write reunions for member to file
+reunions_js_file.write("\n\nvar reunionsForMember =")
+reunions_js_file.write(str(reunions_for_member))
 reunions_js_file.write(";")
 reunions_js_file.close()

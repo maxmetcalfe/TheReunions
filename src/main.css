@@ -24,7 +24,7 @@ body {
 
 .side-panel table {
   width: 300px;
-  margin-top: 30%;
+  margin-top: 30%;  
 }
 
 .side-panel td {
@@ -154,6 +154,14 @@ body {
   background-color: #c50;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
+  cursor: pointer;
+  -webkit-transition: width 0.5s; /* Safari */
+  transition: width 0.5s;
+}
+
+.selected {
+  width: 20px;
+  height: 20px;
 }
 
 .marker:after {

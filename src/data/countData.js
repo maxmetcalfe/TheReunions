@@ -5,4 +5,4 @@ var summaryCounts = {
     "g":{'four': 11, 'three': 4, 'two': 11},
 };
 
-module.exports = summaryCounts;
+exports.summaryCounts = summaryCounts;

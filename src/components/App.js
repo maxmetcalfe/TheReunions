@@ -4,7 +4,7 @@ import MemberTable from './MemberTable';
 class App extends Component {
 
   render() {
-    return <MemberTable summaryCounts={this.props.summaryCounts} />
+    return <MemberTable summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember}/>
   }
 }
 
