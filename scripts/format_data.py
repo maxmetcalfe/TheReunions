@@ -58,7 +58,8 @@ summary_js_file = open(output_summary_path, "w")
 summary_js_file.write("var summaryCounts = {\n")
 for m in members.keys():
     summary_js_file.write('''    "''' + m + '''":''' + str(eval(m + "_reunions")) + ",\n")
-summary_js_file.write("};")
+summary_js_file.write("};\n\n")
+summary_js_file.write("exports.summaryCounts = summaryCounts;\n")
 summary_js_file.close()
 
 # Write out the reunions to output_reunions_path.
@@ -85,5 +86,6 @@ reunions_js_file.write(";")
 # Write reunions for member to file
 reunions_js_file.write("\n\nvar reunionsForMember =")
 reunions_js_file.write(str(reunions_for_member))
-reunions_js_file.write(";")
+reunions_js_file.write(";\n\n")
+reunions_js_file.write("exports.reunions = reunions;\nexports.reunionsForMember = reunionsForMember;\n")
 reunions_js_file.close()
