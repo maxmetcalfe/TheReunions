@@ -149,30 +149,18 @@ body {
 
 /* Marker Styles */
 .marker {
-  width: 10px;
-  height: 10px;
-  background-color: #c50;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   cursor: pointer;
-  -webkit-transition: width 0.5s; /* Safari */
-  transition: width 0.5s;
 }
 
 .selected {
-  width: 20px;
-  height: 20px;
-}
-
-.marker:after {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  background-color: rgba(0, 0, 0, .1);
-  top: 25%;
-  left: 25%;
-  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: -5px;
+  margin-top: -5px;
 }
 
 /* Cat 4 Reunion */
