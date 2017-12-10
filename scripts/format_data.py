@@ -43,9 +43,9 @@ data_file = open(input_data_path, "r")
 for line in data_file:
     line_split = line.split(",")[:-2]
     reunion_cat = typeName[str(line_split.count("X"))].replace(" ", "")
-    location = line_split[1].replace(" ", "")
-    name = line_split[0].replace(" ", "")
-    element_id = name.lower() + reunion_cat.upper() + "-" + location
+    location = line_split[1]
+    name = line_split[0]
+    element_id = name.replace(" ", "").lower() + reunion_cat.upper() + "-" + location.replace(" ", "")
     reunion = { "category": reunion_cat, "location": location, "name": name, "element_id": element_id }
     reunions.append(reunion)
     for m in members.keys():
@@ -75,7 +75,7 @@ for r in reunions:
     coordinates = response["results"][0]["geometry"]["location"]
     latitude = coordinates["lat"]
     longitude = coordinates["lng"]
-    my_feature = Feature(geometry=Point((longitude, latitude)), properties={"category": r["category"], "title": r["location"], "element_id": r["element_id"]})
+    my_feature = Feature(geometry=Point((longitude, latitude)), properties={"category": r["category"], "name": r["name"], "location": r["location"], "element_id": r["element_id"]})
     geojson_features.append(my_feature)
 
 feature_collection = FeatureCollection(geojson_features)

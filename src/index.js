@@ -35,7 +35,7 @@ map.on("load", function() {
     new mapboxgl.Marker(el)
     .setLngLat(reunion.geometry.coordinates)
     .setPopup(new mapboxgl.Popup({ offset: 25 })
-    .setHTML("<h3>" + reunion.properties.title + "</h3>"))
+    .setHTML("<h2>" + reunion.properties.location + "</h2><h3>" + reunion.properties.name + "</h3>"))
     .addTo(map);
   });
 })

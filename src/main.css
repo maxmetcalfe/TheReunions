@@ -163,6 +163,24 @@ body {
   margin-top: -5px;
 }
 
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+}
+
+.mapboxgl-popup-content h2 {
+  margin: 6px;
+}
+
+.mapboxgl-popup-content h3 {
+  margin: 4px;
+  color: rgb(87, 87, 87);
+}
+
+
 /* Cat 4 Reunion */
 .four {
   background-color: rgb(255, 250, 0);
