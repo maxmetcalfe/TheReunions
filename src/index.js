@@ -30,14 +30,12 @@ map.on("load", function() {
     el.className = "marker";
     el.id = reunion.properties.element_id;
     el.classList.add(reunion.properties.category);
-    
-    el.addEventListener("click", function(event) {
-        console.log(reunion.properties.title);
-    })
 
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el)
     .setLngLat(reunion.geometry.coordinates)
+    .setPopup(new mapboxgl.Popup({ offset: 25 })
+    .setHTML("<h3>" + reunion.properties.title + "</h3>"))
     .addTo(map);
   });
 })
