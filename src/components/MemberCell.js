@@ -11,7 +11,7 @@ class MemberCell extends Component {
       <tr key={this.props.member + "T"}>
         <td key={this.props.member}>
           <MemberIcon key={memberIconKey} text={this.props.member} reunions={this.props.reunions} />
-          <CoinBox name={coinBoxKey} member={this.props.member} counts={this.props.counts}/>
+          <CoinBox name={coinBoxKey} member={this.props.member} counts={this.props.counts} reunions={this.props.reunions}/>
         </td>
       </tr>
     );
