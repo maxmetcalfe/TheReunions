@@ -9,13 +9,13 @@ class Coin extends Component {
   }
 
   selectMemberReunionsByType(e) {
-      this.resetMap();
+    this.resetMap();
     var self = this;
     e.reunions.forEach(function(reunion) {
-        if (reunion.category === self.props.type) {
-          var marker = document.getElementById(reunion.element_id);
-          marker.classList.add("selected");
-        }
+      if (reunion.category === self.props.type) {
+        var marker = document.getElementById(reunion.element_id);
+        marker.classList.add("selected");
+      }
     })
   }
 
