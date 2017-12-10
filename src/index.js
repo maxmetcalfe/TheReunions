@@ -25,19 +25,19 @@ var map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 
 map.on("load", function() {
-  reunionData.reunions.features.forEach(function(marker) {
+  reunionData.reunions.features.forEach(function(reunion) {
     var el = document.createElement("div");
     el.className = "marker";
-    el.id = marker.properties.element_id;
-    el.classList.add(marker.properties.category);
+    el.id = reunion.properties.element_id;
+    el.classList.add(reunion.properties.category);
     
     el.addEventListener("click", function(event) {
-        console.log(event.target);
+        console.log(reunion.properties.title);
     })
 
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
+    .setLngLat(reunion.geometry.coordinates)
     .addTo(map);
   });
 })

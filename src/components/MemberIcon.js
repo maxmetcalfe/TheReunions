@@ -5,21 +5,27 @@ class MemberIcon extends Component {
   constructor(props) {
     super(props);
     this.reunions = props.reunions;
-    this.filterReunionsOnMember.bind(this);
   }
 
-  filterReunionsOnMember(e) {
+  selectMemberReunions(e) {
+    this.resetMap();
     e.reunions.forEach(function(reunion) {
-        var marker = document.getElementById(reunion);
-        console.log(marker);
-        marker.classList.toggle("selected");
+        var marker = document.getElementById(reunion.element_id);
+        marker.classList.add("selected");
+    })
+  }
+
+  resetMap() {
+    var selectedReunions = map.querySelectorAll(".selected");
+    selectedReunions.forEach(function(r) {
+      r.classList.remove("selected");
     })
   }
 
   render() {
     var text = this.props.text.toUpperCase();
     return (
-      <div className="member-icon" onClick={()=>{this.filterReunionsOnMember(this.props)}}>
+      <div className="member-icon" onClick={()=>{this.selectMemberReunions(this.props)}}>
         {text}
       </div>
     );
