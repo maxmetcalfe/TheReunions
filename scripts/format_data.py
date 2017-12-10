@@ -21,7 +21,7 @@ d_reunions = { "four": 0, "three": 0, "two": 0 }
 reunions_for_member = { "m": [], "j": [], "g": [], "d": [] }
 
 # Define a mapping between the member and his column in the input data.
-members = { "m": 2, "j": 3, "g": 4, "d": 5 }
+members = { "m": 5, "j": 4, "g": 2, "d": 3 }
 
 # Define a mapping between the numeric reunion type and a dictionary key string.
 typeName = {
@@ -41,16 +41,17 @@ data_file = open(input_data_path, "r")
 
 # Calculate the total number of each reunion type per member.
 for line in data_file:
-    line_split = line.split("\t")
+    line_split = line.split(",")[:-2]
     reunion_cat = typeName[str(line_split.count("X"))].replace(" ", "")
     location = line_split[1].replace(" ", "")
     name = line_split[0].replace(" ", "")
-    element_id = name.lower() + reunion_cat.upper()
-    reunions.append({ "category": reunion_cat, "location": location, "name": name, "element_id": element_id })
+    element_id = name.lower() + reunion_cat.upper() + "-" + location
+    reunion = { "category": reunion_cat, "location": location, "name": name, "element_id": element_id }
+    reunions.append(reunion)
     for m in members.keys():
         count_index = members[m]     
         if line_split[int(count_index)] == "X":
-            reunions_for_member[m].append(element_id)
+            reunions_for_member[m].append(reunion)
             eval(m + "_reunions")[reunion_cat] += 1
 
 # Write out the summary info to output_summary_path.
