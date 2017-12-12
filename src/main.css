@@ -127,6 +127,12 @@ body {
   background-color: rgb(255, 250, 0);
 }
 
+/* Cat 4 Reunion Selected */
+.coin.selected:first-of-type {
+  background-color: rgb(255, 250, 0);
+  color: black;
+}
+
 /* Cat 3 Reunion */
 .coin:nth-child(2) {
   border-color: rgb(244, 66, 206);
@@ -136,6 +142,12 @@ body {
 /* Cat 3 Reunion Hover */
 .coin:hover:nth-child(2) {
   background-color: rgb(244, 66, 206);
+}
+
+/* Cat 3 Reunion Selected */
+.coin.selected:nth-child(2) {
+  background-color: rgb(244, 66, 206);
+  color: black;
 }
 
 /* Cat 2 Reunion */
@@ -148,6 +160,12 @@ body {
 /* Cat 2 Reunion Hover */
 .coin:hover:last-of-type {
   background-color: rgb(66, 244, 232);
+}
+
+/* Cat 2 Reunion Selected */
+.coin.selected:last-of-type {
+  background-color: rgb(66, 244, 232);
+  color: black;
 }
 
 .coin:hover {
