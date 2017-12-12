@@ -67,6 +67,13 @@ body {
   background-color: rgb(50,205,50);
 }
 
+/* Style the member icon text on selection */
+.member-icon.selected {
+  border-color: black;
+  color: black;
+  background-color: rgb(50,205,50);
+}
+
 /* Add a second circle to the memmber icon */ 
 .member-icon:after {
   position: absolute;
@@ -156,7 +163,7 @@ body {
   cursor: pointer;
 }
 
-.selected {
+.picked {
   width: 15px;
   height: 15px;
   margin-left: -5px;

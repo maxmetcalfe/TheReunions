@@ -8,7 +8,7 @@ class CoinBox extends Component {
     return (
       <div key={divKey} className="coin-box">
         {Object.keys(this.props.counts).map((type) => (
-            <Coin key={this.props.member + "-" + type} type={type} counts={this.props.counts[type]} reunions={this.props.reunions}/>
+            <Coin key={this.props.member + "-" + type} type={type} id={this.props.member + "-" + type} counts={this.props.counts[type]} reunions={this.props.reunions}/>
         ))}
       </div>
     )
