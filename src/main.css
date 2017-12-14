@@ -1,14 +1,39 @@
 
 body {
-  font-family: 'Monoton', cursive;
+  font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
+  background-color: rgb(87, 87, 87);
+  height: 1600px;
+}
+
+body h1 {
+  color: rgb(50,205,50);
+  font-size: 80px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+body h2 {
+  color: rgb(255, 178, 5);
+  text-align: center;
 }
 
 #map {
   position: absolute;
   top: 0px;
   left: 300px;
-  width: calc(100% - 300px);
+  width: 600px;
   height: 100%;
+}
+
+#map-container {
+  position: absolute;
+  top: 600px;
+  left: 50%;
+  transform: translate(-50%);
+  display: block;
+  height: 800px;
+  width: 900px;
+  box-shadow: 8px 8px 8px 8px rgb(50, 50, 50);
 }
 
 .side-panel {
@@ -17,19 +42,20 @@ body {
   left: 0px;
   width: 300px;
   height: 100%;
-  background-color: rgba(5, 5, 5, 0.8);
+  background-color: rgb(55, 55, 55);
   box-shadow: 0px 0px 8px rgb(90, 90, 90);
   z-index: 1;
 }
 
 .side-panel table {
   width: 300px;
-  margin-top: 30%;  
+  height: 100%;
+  margin-top: 20%;
 }
 
 .side-panel td {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .member-icon {
@@ -38,7 +64,7 @@ body {
   transform: translate(-50%);
   height: 80px;
   width: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: rgb(50,205,50);  
   line-height: 80px;
   font-size: 40px;
