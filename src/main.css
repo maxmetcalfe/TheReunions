@@ -27,7 +27,7 @@ body h2 {
 
 #map-container {
   position: absolute;
-  top: 600px;
+  top: 700px;
   left: 50%;
   transform: translate(-50%);
   display: block;
@@ -138,11 +138,11 @@ body h2 {
   border-radius: 20px;
   border-color: red;
   /* Slow down the hover effect */
-  -webkit-transition: all 1s ease;
+  /*-webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  transition: all 1s ease;*/
   cursor: pointer;
 }
 
@@ -239,18 +239,52 @@ body h2 {
 
 /* Cat 4 Reunion */
 .four {
-  background-color: rgb(255, 250, 0);
   border-color: rgb(255, 250, 0);
+  border-color: rgb(255, 250, 0);
+  color: rgb(255, 250, 0);
+}
+
+.four:hover {
+  background-color: rgb(255, 250, 0);
+  color: black;
 }
 
 /* Cat 3 Reunion */
 .three {
-  background-color: rgb(244, 66, 206);
   border-color: rgb(244, 66, 206);
+  color: rgb(244, 66, 206);
+}
+
+.three:hover {
+  background-color: rgb(244, 66, 206);
+  color: black;
 }
 
 /* Cat 2 Reunion */
 .two {
-  background-color: rgb(66, 244, 232);
   border-color: rgb(66, 244, 232);
+  color: rgb(66, 244, 232);
+}
+
+.two:hover {
+  background-color: rgb(66, 244, 232);
+  color: black;
+}
+
+/* Category Description styles */
+.category-descriptions {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 60px;
+}
+
+.category-descriptions div {
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.category-descriptions h3 {
+  marin-left: 5px;
 }
