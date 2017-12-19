@@ -34,9 +34,11 @@ body h2 {
   height: 800px;
   width: 900px;
   box-shadow: 8px 8px 8px 8px rgb(50, 50, 50);
+  margin-top: 50px;
 }
 
 .side-panel {
+  font-family: 'Monoton', cursive;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -48,22 +50,23 @@ body h2 {
 }
 
 .side-panel table {
-  width: 300px;
+  width: 100%;
   height: 100%;
-  margin-top: 20%;
 }
 
 .side-panel td {
   display: block;
-  margin-bottom: 10px;
+  height: 100%;
 }
 
 .member-icon {
   position: relative;
+  display: inline-block;
   left: 50%;
   transform: translate(-50%);
   height: 80px;
   width: 80px;
+  margin-top: 40px;
   margin-bottom: 10px;
   color: rgb(50,205,50);  
   line-height: 80px;
@@ -124,6 +127,8 @@ body h2 {
 .coin {
   position: relative;
   text-align: center;
+  display: inline-block;
+  margin: 0px;
   width: 30px;
   height: 30px;
   font-size: 12px;
@@ -142,59 +147,59 @@ body h2 {
 }
 
 /* Cat 4 Reunion */
-.coin:first-of-type {
+.coin-box .coin:first-of-type {
   border-color: rgb(255, 250, 0);
   color: rgb(255, 250, 0);
   margin-left: 80px;
 }
 
 /* Cat 4 Reunion Hover */
-.coin:hover:first-of-type {
+.coin-box .coin:hover:first-of-type {
   background-color: rgb(255, 250, 0);
 }
 
 /* Cat 4 Reunion Selected */
-.coin.selected:first-of-type {
+.coin-box .coin.selected:first-of-type {
   background-color: rgb(255, 250, 0);
   color: black;
 }
 
 /* Cat 3 Reunion */
-.coin:nth-child(2) {
+.coin-box .coin:nth-child(2) {
   border-color: rgb(244, 66, 206);
   color: rgb(244, 66, 206);
 }
 
 /* Cat 3 Reunion Hover */
-.coin:hover:nth-child(2) {
+.coin-box .coin:hover:nth-child(2) {
   background-color: rgb(244, 66, 206);
 }
 
 /* Cat 3 Reunion Selected */
-.coin.selected:nth-child(2) {
+.coin-box .coin.selected:nth-child(2) {
   background-color: rgb(244, 66, 206);
   color: black;
 }
 
 /* Cat 2 Reunion */
-.coin:last-of-type {
+.coin-box .coin:last-of-type {
   border-color: rgb(66, 244, 232);
   color: rgb(66, 244, 232);
   margin-right: 80px;
 }
 
 /* Cat 2 Reunion Hover */
-.coin:hover:last-of-type {
+.coin-box .coin:hover:last-of-type {
   background-color: rgb(66, 244, 232);
 }
 
 /* Cat 2 Reunion Selected */
-.coin.selected:last-of-type {
+.coin-box .coin.selected:last-of-type {
   background-color: rgb(66, 244, 232);
   color: black;
 }
 
-.coin:hover {
+.coin-box .coin:hover {
   color: black;
 }
 
