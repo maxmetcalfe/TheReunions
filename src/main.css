@@ -147,59 +147,67 @@ body h2 {
 }
 
 /* Cat 4 Reunion */
-.coin-box .coin:first-of-type {
+.four {
   border-color: rgb(255, 250, 0);
   color: rgb(255, 250, 0);
-  margin-left: 80px;
 }
 
 /* Cat 4 Reunion Hover */
-.coin-box .coin:hover:first-of-type {
+.four:hover {
   background-color: rgb(255, 250, 0);
 }
 
 /* Cat 4 Reunion Selected */
-.coin-box .coin.selected:first-of-type {
+.four.selected {
   background-color: rgb(255, 250, 0);
   color: black;
 }
 
 /* Cat 3 Reunion */
-.coin-box .coin:nth-child(2) {
+.three {
   border-color: rgb(244, 66, 206);
   color: rgb(244, 66, 206);
 }
 
 /* Cat 3 Reunion Hover */
-.coin-box .coin:hover:nth-child(2) {
+.three:hover {
   background-color: rgb(244, 66, 206);
 }
 
 /* Cat 3 Reunion Selected */
-.coin-box .coin.selected:nth-child(2) {
+.three.selected {
   background-color: rgb(244, 66, 206);
   color: black;
 }
 
 /* Cat 2 Reunion */
-.coin-box .coin:last-of-type {
+.two {
   border-color: rgb(66, 244, 232);
   color: rgb(66, 244, 232);
-  margin-right: 80px;
 }
 
 /* Cat 2 Reunion Hover */
-.coin-box .coin:hover:last-of-type {
+.two:hover {
   background-color: rgb(66, 244, 232);
 }
 
 /* Cat 2 Reunion Selected */
-.coin-box .coin.selected:last-of-type {
+.two.selected {
   background-color: rgb(66, 244, 232);
   color: black;
 }
 
-.coin-box .coin:hover {
+/* Align coins within coin-box. */
+.coin-box .coin:first-of-type {
+  margin-left: 80px;
+}
+
+.coin-box .coin:last-of-type {
+  margin-right: 80px;
+}
+
+/* All coins should have black font on hover. */
+.coin:hover {
   color: black;
 }
 
@@ -236,43 +244,6 @@ body h2 {
   color: rgb(87, 87, 87);
 }
 
-
-/* Cat 4 Reunion */
-.four {
-  border-color: rgb(255, 250, 0);
-  background-color: rgb(255, 250, 0);
-  color: rgb(255, 250, 0);
-}
-
-.four:hover {
-  background-color: rgb(255, 250, 0);
-  color: black;
-}
-
-/* Cat 3 Reunion */
-.three {
-  border-color: rgb(244, 66, 206);
-  background-color: rgb(244, 66, 206);
-  color: rgb(244, 66, 206);
-}
-
-.three:hover {
-  background-color: rgb(244, 66, 206);
-  color: black;
-}
-
-/* Cat 2 Reunion */
-.two {
-  border-color: rgb(66, 244, 232);
-  background-color: rgb(66, 244, 232);
-  color: rgb(66, 244, 232);
-}
-
-.two:hover {
-  background-color: rgb(66, 244, 232);
-  color: black;
-}
-
 /* Category Description styles */
 .category-descriptions {
   position: absolute;
@@ -288,6 +259,21 @@ body h2 {
 }
 
 .category-descriptions h3 {
-  margin-left: 5px;
-  padding-left: 5px;
+  font-size: 20px;
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 34px;
+}
+
+.category-descriptions h3:hover {
+  border-color: rgb(87, 87, 87);
+  border-radius: 20px;
+  color: black;
+  /* Slow down the hover effect */
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }

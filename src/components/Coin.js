@@ -26,6 +26,13 @@ class Coin extends Component {
     })
   }
 
+  className() {
+    if (this.displayAsSelected()) {
+      return SELECTED_CLASS_NAME + " " + this.props.type;
+    }
+    return CLASS_NAME + " " + this.props.type;
+  }
+
   resetMap() {
     var selectedReunions = map.querySelectorAll(".picked");
     selectedReunions.forEach(function(r) {
@@ -42,7 +49,7 @@ class Coin extends Component {
 
   render() {
     return (
-      <div className={this.displayAsSelected() ? SELECTED_CLASS_NAME : CLASS_NAME} onClick={()=>{this.selectMemberReunionsByType(this.props)}}>{this.props.counts}</div>
+      <div className={this.className()} onClick={()=>{this.selectMemberReunionsByType(this.props)}}>{this.props.counts}</div>
     )
   }
 }
