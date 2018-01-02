@@ -8,7 +8,7 @@ require("./main.css");
 
 import App from "./components/App";
 
-ReactDOM.render(<App summaryCounts={countdata.summaryCounts} reunionsForMember={reunionData.reunionsForMember}/>, document.getElementById("panel"));
+ReactDOM.render(<App summaryCounts={countdata.summaryCounts} reunionsForMember={reunionData.reunionsForMember}/>, document.getElementById("app"));
 
 // MapBox info
 var mapStyle = "mapbox://styles/mapbox/dark-v9";
