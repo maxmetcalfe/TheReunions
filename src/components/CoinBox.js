@@ -11,7 +11,7 @@ class CoinBox extends Component {
             <Coin key={this.props.member + "-" + type} type={type} id={this.props.member + "-" + type} counts={this.props.counts[type]} reunions={this.props.reunions} selection={this.props.selection} setSelection={this.props.setSelection} />
         ))}
       </div>
-    )
+    );
   }
 }
 

@@ -50,7 +50,7 @@ class Coin extends Component {
   render() {
     return (
       <div className={this.className()} onClick={()=>{this.selectMemberReunionsByType(this.props)}}>{this.props.counts}</div>
-    )
+    );
   }
 }
 

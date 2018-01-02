@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MapContainer from './MapContainer';
+import CategoryDescriptions from './CategoryDescriptions';
 
 class App extends Component {
 
@@ -14,7 +15,12 @@ class App extends Component {
   }
 
   render() {
-    return <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} />
+    return (
+      <div>
+      <CategoryDescriptions />
+      <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} />
+      </div>
+    );
   }
 }
 
