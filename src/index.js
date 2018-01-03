@@ -8,6 +8,6 @@ require("./main.css");
 
 import App from "./components/App";
 
-ReactDOM.render(<App summaryCounts={countdata.summaryCounts} reunionsForMember={reunionData.reunionsForMember}/>, document.getElementById("app"));
+ReactDOM.render(<App summaryCounts={countdata.summaryCounts} reunions={reunionData.reunions} reunionsForMember={reunionData.reunionsForMember}/>, document.getElementById("app"));
 
 require("./map.js");

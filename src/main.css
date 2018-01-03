@@ -2,7 +2,7 @@
 body {
   font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
   background-color: rgb(87, 87, 87);
-  height: 1600px;
+  height: 2000px;
 }
 
 body h1 {
@@ -27,7 +27,7 @@ body h2 {
 
 #map-container {
   position: absolute;
-  top: 700px;
+  top: 1200px;
   left: 50%;
   transform: translate(-50%);
   display: block;
@@ -41,7 +41,7 @@ body h2 {
 @media screen and (max-width: 1050px) {
 
   #map-container {
-    top: 900px;
+    top: 1200px;
     left: 450px;
     height: 900px;
   }
@@ -263,3 +263,60 @@ body h2 {
   border-radius: 20px;
   color: black;
 }
+
+#reunion-list {
+  position: absolute;
+  top: 700px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 300px;
+  font-size: 40px;
+  width: 800px;
+  text-align: center;
+  margin-top: 100px;
+  overflow-y: auto;
+}
+
+#reunion-list table {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+#reunion-list table td {
+  text-align: left;
+  padding-left: 30px;
+  background-image: linear-gradient(transparent 80%, rgba(175, 236, 229, 0.6) 80%);
+  background-size: 5px 5px;
+  font-weight: 600;
+  border: 0;
+}
+
+#reunion-list table td:first-child {
+  border-radius: 5px 0px 0px 5px;
+}
+
+#reunion-list table td:last-child {
+  border-radius: 0px 5px 5px 0px;
+}
+
+#reunion-list .row-four {
+  background-color: rgba(255, 250, 0, 0.6);
+}
+
+#reunion-list .row-three {
+  background-color: rgba(66, 244, 232, 0.6);
+}
+
+#reunion-list .row-two {
+  background-color: rgba(244, 66, 206, 0.6);
+}
+
+#reunion-list table tr:hover {
+  background-color: black;
+  color: white;
+}
+
