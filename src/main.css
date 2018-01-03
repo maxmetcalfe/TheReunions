@@ -63,11 +63,6 @@ body h2 {
   height: 100%;
 }
 
-.side-panel td {
-  display: block;
-  height: 100%;
-}
-
 .member-icon {
   position: relative;
   display: inline-block;
