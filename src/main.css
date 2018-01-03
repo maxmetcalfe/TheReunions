@@ -289,8 +289,6 @@ body h2 {
 #reunion-list table td {
   text-align: left;
   padding-left: 30px;
-  background-image: linear-gradient(transparent 80%, rgba(175, 236, 229, 0.6) 80%);
-  background-size: 5px 5px;
   font-weight: 600;
   border: 0;
 }
