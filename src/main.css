@@ -37,6 +37,16 @@ body h2 {
   margin-top: 50px;
 }
 
+/* A modified map container style for small screen sizes. */
+@media screen and (max-width: 1050px) {
+
+  #map-container {
+    top: 900px;
+    left: 450px;
+    height: 900px;
+  }
+}
+
 .side-panel {
   font-family: 'Monoton', cursive;
   position: absolute;
