@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class ReunionList extends Component {
 
   render() {
-    console.log(this.props);
     return (
       <div id="reunion-list">
         <table>
