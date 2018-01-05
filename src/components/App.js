@@ -18,9 +18,9 @@ class App extends Component {
   render() {
     return (
       <div>
-      <CategoryDescriptions />
-      <ReunionList reunions={this.props.reunions} />
-      <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} />
+        <CategoryDescriptions />
+        <ReunionList reunions={this.props.reunions} />
+        <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} />
       </div>
     );
   }

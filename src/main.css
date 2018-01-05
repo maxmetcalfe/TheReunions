@@ -27,7 +27,6 @@ body h2 {
 
 #map-container {
   position: absolute;
-  top: 1200px;
   left: 50%;
   transform: translate(-50%);
   display: block;
@@ -250,10 +249,9 @@ body h2 {
 
 /* Category Description styles */
 .category-descriptions {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .category-descriptions div {
@@ -276,57 +274,24 @@ body h2 {
   color: black;
 }
 
+.category-descriptions-div {
+  display: block;
+}
+
 #reunion-list {
-  position: absolute;
-  top: 700px;
-  left: 50%;
-  transform: translate(-50%);
-  height: 300px;
+  height: 500px;
   font-size: 40px;
-  width: 800px;
+  font-weight: 600;
+  margin-top: 150px;
   text-align: center;
-  margin-top: 100px;
   overflow-y: auto;
 }
 
 #reunion-list table {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   width: 100%;
-  border-radius: 10px;
-  border: none;
-}
-
-#reunion-list table td {
-  text-align: left;
-  padding-left: 30px;
-  font-weight: 600;
-  border: 0;
-}
-
-#reunion-list table td:first-child {
-  border-radius: 5px 0px 0px 5px;
-}
-
-#reunion-list table td:last-child {
-  border-radius: 0px 5px 5px 0px;
-}
-
-#reunion-list .row-four {
-  background-color: rgba(255, 250, 0, 0.6);
-}
-
-#reunion-list .row-three {
-  background-color: rgba(66, 244, 232, 0.6);
-}
-
-#reunion-list .row-two {
-  background-color: rgba(244, 66, 206, 0.6);
 }
 
 #reunion-list table tr:hover {
-  background-color: black;
-  color: white;
+  color: black;
+  font-size: 20px;
 }
-
