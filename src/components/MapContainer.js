@@ -6,6 +6,7 @@ class MapContainer extends Component {
   render() {
     return (
       <div id="map-container">
+        <div id="map"></div>
         <div id="panel" className="side-panel">
           <MemberTable summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.props.selection} setSelection={this.props.setSelection.bind(this)} />
          </div>

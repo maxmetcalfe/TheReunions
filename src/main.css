@@ -212,6 +212,18 @@ body h2 {
   cursor: pointer;
 }
 
+.marker.four {
+  background-color: rgb(255, 250, 0);
+}
+
+.marker.three {
+  background-color: rgb(244, 66, 206);
+}
+
+.marker.two {
+  background-color: rgb(66, 244, 232);
+}
+
 .picked {
   width: 15px;
   height: 15px;

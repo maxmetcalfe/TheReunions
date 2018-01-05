@@ -12,6 +12,8 @@ var map = new mapboxgl.Map({
 });
 map.addControl(new mapboxgl.NavigationControl());
 
+var reunionData = require("./data/reunionData.js");
+
 map.on("load", function() {
   reunionData.reunions.features.forEach(function(reunion) {
     var el = document.createElement("div");
