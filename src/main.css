@@ -2,7 +2,6 @@
 body {
   font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
   background-color: rgb(87, 87, 87);
-  height: 2000px;
 }
 
 body h1 {
@@ -21,29 +20,63 @@ body h2 {
   position: absolute;
   top: 0px;
   left: 300px;
-  width: 600px;
+  width: 100%;
   height: 100%;
 }
 
 #map-container {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  display: block;
-  height: 800px;
-  width: 900px;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  display: none;
   box-shadow: 8px 8px 8px 8px rgb(50, 50, 50);
-  margin-top: 50px;
 }
 
-/* A modified map container style for small screen sizes. */
-@media screen and (max-width: 1050px) {
+#map-container.visible {
+  display: block;
+}
 
-  #map-container {
-    top: 1200px;
-    left: 450px;
-    height: 900px;
-  }
+.map-container-button {
+  position: absolute;
+  display: none;
+  transform: translateX(-50%);
+  text-align: center;
+  left: 50%;
+  width: 200px;
+  height: 50px;
+  font-weight: 600;
+  line-height: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background-color: grey;
+  color: rgb(27, 27, 27);
+}
+
+.map-container-button.visible {
+  display: block;
+}
+
+.map-container-button.visible:hover {
+  color: white;
+  background-color: rgb(27, 27, 27);
+}
+
+.map-container-close-button {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: rgb(150, 150, 150);
+  z-index: 999;
+}
+
+.map-container-close-button.visible {
+  display: block;
 }
 
 .side-panel {
