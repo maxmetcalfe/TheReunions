@@ -40,7 +40,7 @@ body h2 {
 
 .map-container-button {
   position: absolute;
-  display: none;
+  display: block;
   transform: translateX(-50%);
   text-align: center;
   left: 50%;
@@ -55,28 +55,20 @@ body h2 {
   color: rgb(27, 27, 27);
 }
 
-.map-container-button.visible {
-  display: block;
-}
-
-.map-container-button.visible:hover {
+.map-container-button:hover {
   color: white;
   background-color: rgb(27, 27, 27);
 }
 
 .map-container-close-button {
   position: absolute;
-  display: none;
+  display: block;
   top: 0px;
   left: 0px;
   margin-top: 10px;
   margin-left: 10px;
   color: rgb(150, 150, 150);
   z-index: 999;
-}
-
-.map-container-close-button.visible {
-  display: block;
 }
 
 .side-panel {

@@ -4,6 +4,9 @@ import MapContainer from './MapContainer';
 import CategoryDescriptions from './CategoryDescriptions';
 import ReunionList from './ReunionList';
 
+var MAP_CONTAINER_BUTTON_CLASS = "map-container-button";
+var MAP_CONTAINER_CLOSE_BUTTON_CLASS = "map-container-close-button";
+
 class App extends Component {
 
   constructor(props) {
@@ -25,24 +28,31 @@ class App extends Component {
     this.setState({ mapContainerVisible: false });
   }
 
-  getMapContainerButtonClassName() {
-    return this.state.mapContainerVisible ? "map-container-button" : "map-container-button visible";
-  }
-
-  getMapContainerCloseButtonClassName() {
-    return this.state.mapContainerVisible ? "map-container-close-button visible" : "map-container-close-button";
-  }
-
-  render() {
+  mapContainerHiddenLayout() {
     return (
       <div>
         <Header />
-        <div className={this.getMapContainerCloseButtonClassName()} onClick={this.hideMapContainer.bind(this)}>Close</div>
         <CategoryDescriptions />
-        <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} visible={this.state.mapContainerVisible}/>
-        <div className={this.getMapContainerButtonClassName()} onClick={this.displayMapContainer.bind(this)}>show map</div>
+        <div className={MAP_CONTAINER_BUTTON_CLASS} onClick={this.displayMapContainer.bind(this)}>show map</div>
       </div>
     );
+  }
+
+  mapContainerVisibleLayout() {
+    return (
+      <div>
+        <div className={MAP_CONTAINER_CLOSE_BUTTON_CLASS} onClick={this.hideMapContainer.bind(this)}>Close</div>
+        <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} visible={this.state.mapContainerVisible}/>
+      </div>
+    );
+  }
+
+  render() {
+    if (this.state.mapContainerVisible) {
+      return this.mapContainerVisibleLayout();
+    } else {
+      return this.mapContainerHiddenLayout();
+    }
   }
 }
 
