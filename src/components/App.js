@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from './Header';
 import MapContainer from './MapContainer';
 import CategoryDescriptions from './CategoryDescriptions';
 import ReunionList from './ReunionList';
@@ -35,6 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header />
         <div className={this.getMapContainerCloseButtonClassName()} onClick={this.hideMapContainer.bind(this)}>Close</div>
         <CategoryDescriptions />
         <MapContainer summaryCounts={this.props.summaryCounts} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} visible={this.state.mapContainerVisible}/>
