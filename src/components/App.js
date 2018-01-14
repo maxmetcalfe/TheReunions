@@ -33,7 +33,7 @@ class App extends Component {
       <div>
         <Header />
         <CategoryDescriptions />
-        <div className={MAP_CONTAINER_BUTTON_CLASS} onClick={this.displayMapContainer.bind(this)}>show map</div>
+        <div className={MAP_CONTAINER_BUTTON_CLASS} onClick={this.displayMapContainer.bind(this)}>SHOW MAP</div>
       </div>
     );
   }
