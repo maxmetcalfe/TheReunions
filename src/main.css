@@ -275,6 +275,7 @@ body h2 {
   margin-right: 10px;
   font-weight: 600;
   font-size: 20px;
+  color: rgb(47, 47, 47);
 }
 
 .category-descriptions h3 {
@@ -293,6 +294,18 @@ body h2 {
 
 .category-descriptions-div {
   display: block;
+}
+
+.category-descriptions div.coin.four {
+  background-color: rgb(255, 250, 0);
+}
+
+.category-descriptions div.coin.three {
+  background-color: rgb(244, 66, 206);
+}
+
+.category-descriptions div.coin.two {
+  background-color: rgb(66, 244, 232);
 }
 
 #reunion-list {
