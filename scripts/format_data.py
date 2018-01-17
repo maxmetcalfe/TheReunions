@@ -36,6 +36,9 @@ google_geocoding_url = "https://maps.googleapis.com/maps/api/geocode/json?addres
 # Define an empty array for all reunions.
 reunions = []
 
+# Create array for calculating unique element ids.
+element_ids = []
+
 # Load the local version of input_data.txt
 data_file = open(input_data_path, "r")
 
@@ -45,7 +48,9 @@ for line in data_file:
     reunion_cat = typeName[str(line_split.count("X"))].replace(" ", "")
     location = line_split[1]
     name = line_split[0]
-    element_id = name.replace(" ", "").lower() + reunion_cat.upper() + "-" + location.replace(" ", "")
+    element_id_base = name.replace(" ", "").lower() + reunion_cat.upper() + "-" + location.replace(" ", "")
+    element_id = element_id_base + "-" + str(element_ids.count(element_id_base) + 1)
+    element_ids.append(element_id_base)
     reunion = { "category": reunion_cat, "location": location, "name": name, "element_id": element_id }
     reunions.append(reunion)
     for m in members.keys():
