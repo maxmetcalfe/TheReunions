@@ -20,13 +20,21 @@ class MapContainer extends Component {
     var self = this;
     map.on("load", function() {
       self.props.reunions.features.forEach(function(reunion) {
-        var el = document.createElement("div");
-        el.className = "marker";
-        el.id = reunion.properties.element_id;
-        el.classList.add(reunion.properties.category);
+
+        // Create outer element to handle click area.
+        var elementOuter = document.createElement("div");
+        elementOuter.className = "marker";
+        elementOuter.id = reunion.properties.element_id;
+
+        // Create inner element for the actual marker dislay.
+        var elementInner = document.createElement("div");
+        elementInner.classList.add(reunion.properties.category);
+
+        // Add the inner element to the outer element.
+        elementOuter.appendChild(elementInner);
 
         // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
+        new mapboxgl.Marker(elementOuter)
         .setLngLat(reunion.geometry.coordinates)
         .setPopup(new mapboxgl.Popup({ offset: 25 })
         .setHTML("<h2>" + reunion.properties.location + "</h2><h3>" + reunion.properties.name + "</h3>"))

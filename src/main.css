@@ -222,21 +222,30 @@ body h2 {
 /* Marker Styles */
 .marker {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 }
 
-.marker.four {
+.marker > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.marker div.four {
   background-color: rgb(255, 250, 0);
 }
 
-.marker.three {
+.marker div.three {
   background-color: rgb(244, 66, 206);
 }
 
-.marker.two {
+.marker div.two {
   background-color: rgb(66, 244, 232);
 }
 
