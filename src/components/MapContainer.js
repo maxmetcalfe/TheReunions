@@ -33,6 +33,10 @@ class MapContainer extends Component {
         // Add the inner element to the outer element.
         elementOuter.appendChild(elementInner);
 
+        // Hack: Popouts were not working with touch event.
+        // Adding an empty event listener fixes the problem :)
+        elementOuter.addEventListener("click", function() {});
+
         // make a marker for each feature and add to the map
         new mapboxgl.Marker(elementOuter)
         .setLngLat(reunion.geometry.coordinates)
