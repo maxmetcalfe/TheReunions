@@ -249,11 +249,9 @@ body h2 {
   background-color: rgb(66, 244, 232);
 }
 
-.picked {
+.marker div.picked {
   width: 15px;
   height: 15px;
-  margin-left: -5px;
-  margin-top: -5px;
 }
 
 .mapboxgl-popup {

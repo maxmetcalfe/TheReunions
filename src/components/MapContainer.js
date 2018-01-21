@@ -24,11 +24,11 @@ class MapContainer extends Component {
         // Create outer element to handle click area.
         var elementOuter = document.createElement("div");
         elementOuter.className = "marker";
-        elementOuter.id = reunion.properties.element_id;
 
         // Create inner element for the actual marker dislay.
         var elementInner = document.createElement("div");
         elementInner.classList.add(reunion.properties.category);
+        elementInner.id = reunion.properties.element_id;
 
         // Add the inner element to the outer element.
         elementOuter.appendChild(elementInner);
