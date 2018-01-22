@@ -42,7 +42,7 @@ class App extends Component {
   mapContainerVisibleLayout() {
     return (
       <div>
-        <div className={MAP_CONTAINER_CLOSE_BUTTON_CLASS} onClick={this.hideMapContainer.bind(this)}>Close</div>
+        <a href="#" className={MAP_CONTAINER_CLOSE_BUTTON_CLASS} onClick={this.hideMapContainer.bind(this)}></a>
         <MapContainer summaryCounts={this.props.summaryCounts} reunions={this.props.reunions} reunionsForMember={this.props.reunionsForMember} selection={this.state.selection} setSelection={this.setSelection.bind(this)} />
       </div>
     );
