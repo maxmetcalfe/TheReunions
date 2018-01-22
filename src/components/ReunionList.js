@@ -2,6 +2,11 @@ import React, { Component } from "react";
 
 class ReunionList extends Component {
 
+  componentDidMount() {
+    // Scroll the div to the bottom on mount.
+    this.refs.element.scrollTop = this.refs.element.scrollHeight;
+  }
+
   createStyle(index) {
     return {
       fontSize: 50 - index
@@ -10,7 +15,7 @@ class ReunionList extends Component {
 
   render() {
     return (
-      <div id="reunion-list">
+      <div id="reunion-list" ref="element">
         <table>
           <tbody>
             {this.props.reunions.features.reverse().map((reunion, index) => (
