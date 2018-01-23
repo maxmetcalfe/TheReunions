@@ -22,7 +22,7 @@ class MemberCell extends Component {
             counts={this.props.counts}
             reunions={this.props.reunions}
             selection={this.props.selection}
-            setSelection={this.props.setSelection
+            setSelection={this.props.setSelection}
           />
         </td>
       </tr>
