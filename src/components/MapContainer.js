@@ -9,6 +9,12 @@ mapboxgl.accessToken = "pk.eyJ1IjoibWF4bWV0Y2FsZmUiLCJhIjoiY2o3aWhnazV5MXR3ZTJ3c
 
 class MapContainer extends Component {
 
+  constructor() {
+    super();
+    this.state = { panelVisible: true };
+    window.mapContainer = this;
+  }
+
   componentDidMount() {
     var map = new mapboxgl.Map({
         container: "map", // container id
@@ -17,6 +23,8 @@ class MapContainer extends Component {
         zoom: startingZoom
     });
     map.addControl(new mapboxgl.NavigationControl());
+    this.map = map;
+    this.mapElement = document.getElementById("map");
     var self = this;
     map.on("load", function() {
       self.props.reunions.features.forEach(function(reunion) {
@@ -47,16 +55,23 @@ class MapContainer extends Component {
     })
   }
 
+  hidePanel() {
+    this.setState({ panelVisible: false });
+    this.mapElement.classList.add("full");
+    this.map.resize();
+  }
+
   render() {
       return (
         <div id="map-container">
           <div id="map"></div>
-          <div id="panel" className="side-panel">
+          <div id="panel" className={this.state.panelVisible ? "side-panel" : "side-panel hide"}>
             <MemberTable summaryCounts={this.props.summaryCounts}
               reunionsForMember={this.props.reunionsForMember}
               selection={this.props.selection}
               setSelection={this.props.setSelection.bind(this)}
             />
+            <div id="panel-slider" onClick={this.hidePanel.bind(this)}></div>
            </div>
         </div>
       );
