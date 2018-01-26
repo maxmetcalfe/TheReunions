@@ -39,6 +39,17 @@ body h2 {
   border-radius: 20px;
 }
 
+@media only screen and (max-width: 500px) {
+
+  #map-container {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+
+}
+
 .map-container-button {
   text-align: center;
   width: 200px;
