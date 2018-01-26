@@ -166,14 +166,12 @@ body h2 {
 
 /* Style the member icon text on hover */
 .member-icon:hover {
-  border-color: black;
   color: black;
   background-color: rgb(50,205,50);
 }
 
 /* Style the member icon text on selection */
 .member-icon.selected {
-  border-color: black;
   color: black;
   background-color: rgb(50,205,50);
 }
