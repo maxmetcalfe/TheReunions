@@ -349,7 +349,7 @@ body h2 {
 
 /* Category Description styles */
 .category-descriptions {
-  margin-top: 150px;
+  margin-top: 110px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -421,7 +421,6 @@ body h2 {
 }
 
 #reunion-list table tr:hover{
-  box-shadow: inset 0 0 10px red;
   background-color: rgb(78, 78, 78);
 }
 
