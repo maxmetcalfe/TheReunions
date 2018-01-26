@@ -401,6 +401,14 @@ body h2 {
   overflow-y: auto;
 }
 
+@media only screen and (max-width: 900px) {
+
+  #reunion-list {
+    font-size: 20px;
+  }
+
+}
+
 #reunion-list table {
   width: 70%;
   height: 100%;
