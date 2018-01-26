@@ -71,7 +71,7 @@ class MapContainer extends Component {
       return (
         <div id="map-container">
           <div id="map"></div>
-          <div id="show-panel-button" onClick={this.showPanel.bind(this)}>Show Panel</div>
+          <div id="show-panel-button" onClick={this.showPanel.bind(this)}>SHOW PANEL</div>
           <div id="panel" className={this.state.panelVisible ? "side-panel" : "side-panel hide"}>
             <MemberTable summaryCounts={this.props.summaryCounts}
               reunionsForMember={this.props.reunionsForMember}
