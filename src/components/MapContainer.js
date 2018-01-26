@@ -71,7 +71,9 @@ class MapContainer extends Component {
               selection={this.props.selection}
               setSelection={this.props.setSelection.bind(this)}
             />
-            <div id="panel-slider" onClick={this.hidePanel.bind(this)}></div>
+            <div id="panel-slider" onClick={this.hidePanel.bind(this)}>
+              <div></div>
+            </div>
            </div>
         </div>
       );
