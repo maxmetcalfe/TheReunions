@@ -61,10 +61,17 @@ class MapContainer extends Component {
     this.map.resize();
   }
 
+  showPanel() {
+    this.setState({ panelVisible: true });
+    this.mapElement.classList.remove("full");
+    this.map.resize();
+  }
+
   render() {
       return (
         <div id="map-container">
           <div id="map"></div>
+          <div id="show-panel-button" onClick={this.showPanel.bind(this)}>Show Panel</div>
           <div id="panel" className={this.state.panelVisible ? "side-panel" : "side-panel hide"}>
             <MemberTable summaryCounts={this.props.summaryCounts}
               reunionsForMember={this.props.reunionsForMember}

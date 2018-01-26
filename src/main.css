@@ -116,7 +116,6 @@ body h2 {
   height: 100%;
 }
 
-
 #panel-slider {
   position: absolute;
   left: 290px;
@@ -139,6 +138,24 @@ body h2 {
 #panel-slider div:hover {
   background-color: rgb(255, 40, 40);
 }
+
+#show-panel-button {
+  position: absolute;
+  left: 70px;
+  top: 25px;
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+  line-height: 30px;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  background-color: white;
+}
+
+#show-panel-button:hover {
+  background-color: rgb(200, 200, 200);
+}
+
 
 .member-icon {
   position: relative;
