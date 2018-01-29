@@ -1,8 +1,8 @@
 var summaryCounts = {
-    "j":{'four': 11, 'three': 4, 'two': 11},
-    "m":{'four': 11, 'three': 4, 'two': 28},
-    "d":{'four': 11, 'three': 2, 'two': 9},
-    "g":{'four': 11, 'three': 2, 'two': 20},
+    "j":{'four': 12, 'three': 4, 'two': 12},
+    "m":{'four': 12, 'three': 5, 'two': 29},
+    "d":{'four': 12, 'three': 3, 'two': 10},
+    "g":{'four': 12, 'three': 3, 'two': 21},
 };
 
 exports.summaryCounts = summaryCounts;
