@@ -31,7 +31,7 @@ typeName = {
 }
 
 # Define the Google Geocoding API url to be used for geocoding a reunion's location.
-google_geocoding_url = "https://maps.googleapis.com/maps/api/geocode/json?address=QUERY&key=AIzaSyAi3FXsqBxR35R94j9qvqInAKpXbZeCbFQ"
+geocoding_url = "https://api.tiles.mapbox.com/geocoding/v5/mapbox.places/QUERY.json?access_token=pk.eyJ1IjoibWF4bWV0Y2FsZmUiLCJhIjoiY2o3aWhnazV5MXR3ZTJ3cXViYXRucWJocCJ9.b1B3HrGStBqybxmCEafK0Q"
 
 # Define an empty array for all reunions.
 reunions = []
@@ -75,11 +75,11 @@ reunions_js_file.write("var reunions = ")
 # Great GeoJSON features, geocode the reunion location.
 geojson_features = []
 for r in reunions:
-    target_url = google_geocoding_url.replace("QUERY", r["location"])
+    target_url = geocoding_url.replace("QUERY", r["location"])
     response = requests.get(target_url).json()
-    coordinates = response["results"][0]["geometry"]["location"]
-    latitude = coordinates["lat"]
-    longitude = coordinates["lng"]
+    coordinates = response["features"][0]["center"]
+    latitude = coordinates[1]
+    longitude = coordinates[0]
     my_feature = Feature(geometry=Point((longitude, latitude)), properties={"category": r["category"], "name": r["name"], "location": r["location"], "element_id": r["element_id"]})
     geojson_features.append(my_feature)
 
