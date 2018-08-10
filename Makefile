@@ -10,3 +10,4 @@ data: data/input_data.txt
 start:
 	npm run start
 	
+.PHONY: build dev data start
