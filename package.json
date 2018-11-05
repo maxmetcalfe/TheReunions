@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js --display-error-details",
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "start": "npm run build && NODE_ENV=production node server.js",
     "dev": "webpack-dev-server --hot --inline",
     "data": "python scripts/format_data.py"
@@ -31,7 +32,9 @@
     "node": "6.11.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "css-loader": "^0.28.7",
+    "jest": "^23.6.0",
     "style-loader": "^0.19.0"
   }
 }

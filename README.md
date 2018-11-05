@@ -1,5 +1,7 @@
 # The Reunions
 
+[![travis](https://travis-ci.org/maxmetcalfe/TheReunions.svg?branch=master)](https://travis-ci.org/maxmetcalfe/TneReunions)
+
 This is a web app to display the current status of The Reunions.
 
 ## Updating the reunion data
