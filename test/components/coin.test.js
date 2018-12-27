@@ -1,10 +1,9 @@
-import React from "react";
-import Coin from "../../src/components/Coin";
-import renderer from "react-test-renderer";
+import React from "react"
+import renderer from "react-test-renderer"
+import Coin from "../../src/components/Coin"
 
 test("Coin", () => {
-  const component = renderer.create(
-    <Coin></Coin>,
-  );
-  expect(component.toJSON());
+  let component = renderer.create(<Coin type="four"></Coin>)
+
+  expect(component).toMatchSnapshot()
 });

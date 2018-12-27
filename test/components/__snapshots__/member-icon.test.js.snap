@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MemberIcon 1`] = `
+<div
+  className="member-icon"
+  id="button"
+  onClick={[Function]}
+>
+  D
+</div>
+`;

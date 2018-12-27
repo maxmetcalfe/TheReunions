@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReunionList 1`] = `
+<div
+  id="reunion-list"
+>
+  <table>
+    <tbody>
+      <tr
+        className="two"
+      >
+        <td>
+          New York
+           - 
+          New York 2011
+        </td>
+      </tr>
+      <tr
+        className="three"
+      >
+        <td>
+          Charleston
+           - 
+          Charleston 2012
+        </td>
+      </tr>
+      <tr
+        className="four"
+      >
+        <td>
+          Boston
+           - 
+          Boston 2014
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ReunionList, single reunion 1`] = `
+<div
+  id="reunion-list"
+>
+  <table>
+    <tbody>
+      <tr
+        className="Cat 4"
+      >
+        <td>
+          Boston
+           - 
+          Boston 2014
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

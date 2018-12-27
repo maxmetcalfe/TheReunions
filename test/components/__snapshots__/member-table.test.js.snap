@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MemberTable 1`] = `
+<table
+  className="member-table"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          className="member-icon"
+          id="button"
+          onClick={[Function]}
+        >
+          J
+        </div>
+        <div
+          className="coin-box"
+        >
+          <div
+            className="coin four"
+            onClick={[Function]}
+          >
+            5
+          </div>
+          <div
+            className="coin three"
+            onClick={[Function]}
+          >
+            4
+          </div>
+          <div
+            className="coin two"
+            onClick={[Function]}
+          >
+            4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          className="member-icon"
+          id="button"
+          onClick={[Function]}
+        >
+          M
+        </div>
+        <div
+          className="coin-box"
+        >
+          <div
+            className="coin four"
+            onClick={[Function]}
+          >
+            5
+          </div>
+          <div
+            className="coin three"
+            onClick={[Function]}
+          >
+            3
+          </div>
+          <div
+            className="coin two"
+            onClick={[Function]}
+          >
+            3
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          className="member-icon"
+          id="button"
+          onClick={[Function]}
+        >
+          D
+        </div>
+        <div
+          className="coin-box"
+        >
+          <div
+            className="coin four"
+            onClick={[Function]}
+          >
+            5
+          </div>
+          <div
+            className="coin three"
+            onClick={[Function]}
+          >
+            2
+          </div>
+          <div
+            className="coin two"
+            onClick={[Function]}
+          >
+            2
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          className="member-icon"
+          id="button"
+          onClick={[Function]}
+        >
+          G
+        </div>
+        <div
+          className="coin-box"
+        >
+          <div
+            className="coin four"
+            onClick={[Function]}
+          >
+            5
+          </div>
+          <div
+            className="coin three"
+            onClick={[Function]}
+          >
+            1
+          </div>
+          <div
+            className="coin two"
+            onClick={[Function]}
+          >
+            1
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

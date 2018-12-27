@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header 1`] = `
+<div>
+  <h1>
+    Welcome to The Reunions.
+  </h1>
+  <h2>
+    A group of four friends travel together around the world. This is where they have been.
+  </h2>
+</div>
+`;

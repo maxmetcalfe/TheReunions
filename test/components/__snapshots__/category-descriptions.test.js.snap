@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryDescriptions 1`] = `
+<table
+  className="category-descriptions"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          className="coin four"
+        >
+          4
+        </div>
+      </td>
+      <td>
+        <h3
+          className="four"
+        >
+          All four members present.
+        </h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          className="coin three"
+        >
+          3
+        </div>
+      </td>
+      <td>
+        <h3
+          className="three"
+        >
+          Three members present.
+        </h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          className="coin two"
+        >
+          2
+        </div>
+      </td>
+      <td>
+        <h3
+          className="two"
+        >
+          Two members present.
+        </h3>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

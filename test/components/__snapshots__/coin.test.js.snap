@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Coin 1`] = `
+<div
+  className="coin four"
+  onClick={[Function]}
+/>
+`;
