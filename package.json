@@ -18,7 +18,6 @@
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-local": "jest --coverage",
     "start": "NODE_ENV=production node server.js",
-    "postinstall": "npm run build",
     "dev": "npm run start & webpack-dev-server --hot --inline",
     "data": "python scripts/format_data.py"
   },
@@ -39,5 +38,6 @@
     "react-test-renderer": "^16.6.0",
     "webpack": "^3.6.0",
     "webpack-dev-server": "3.1.11"
-  }
+  },
+  "heroku-run-build-script": true
 }
