@@ -8,8 +8,8 @@ class ReunionList extends Component {
         <table>
           <tbody>
             {this.props.reunions.features.reverse().map((reunion, index) => (
-              <tr className={reunion.properties.category}>
-                <td>{reunion.properties.location} - {reunion.properties.name}</td>
+              <tr className={reunion.properties.category} key={index}>
+                <td key={index}>{reunion.properties.location} - {reunion.properties.name}</td>
               </tr>
             ))}
           </tbody>

@@ -3,7 +3,6 @@
 exports[`MemberIcon 1`] = `
 <div
   className="member-icon"
-  id="button"
   onClick={[Function]}
 >
   D

@@ -9,7 +9,6 @@ exports[`MemberTable 1`] = `
       <td>
         <div
           className="member-icon"
-          id="button"
           onClick={[Function]}
         >
           J
@@ -42,7 +41,6 @@ exports[`MemberTable 1`] = `
       <td>
         <div
           className="member-icon"
-          id="button"
           onClick={[Function]}
         >
           M
@@ -75,7 +73,6 @@ exports[`MemberTable 1`] = `
       <td>
         <div
           className="member-icon"
-          id="button"
           onClick={[Function]}
         >
           D
@@ -108,7 +105,6 @@ exports[`MemberTable 1`] = `
       <td>
         <div
           className="member-icon"
-          id="button"
           onClick={[Function]}
         >
           G
