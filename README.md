@@ -14,9 +14,9 @@ Copy and paste the reunion list from the Google Sheet and paste it into `data/in
 
 A Python script will parse the input data and generate two JavaScript files:
 
-- `src/data/countData.js`
+- `server/data/countData.js`
 
-- `src/data/reunonData.js`
+- `server/data/reunonData.js`
 
 The app loads these files to source the necessary reunion data.
 

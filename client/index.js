@@ -1,8 +1,8 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
-var countdata = require("./data/countData.js");
-var reunionData = require("./data/reunionData.js");
+var countdata = require("../server/data/countData.js");
+var reunionData = require("../server/data/reunionData.js");
 
 require("./main.css");
 

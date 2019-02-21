@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './src/index'
+    './client/index'
   ],
   module: {
     loaders: [
@@ -19,12 +19,12 @@ module.exports = {
     extensions: ['.js']
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/client/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "/client/dist"),
     hot: true,
     port: 8080
   },

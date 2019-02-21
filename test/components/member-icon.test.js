@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import MemberIcon from "../../src/components/MemberIcon"
+import MemberIcon from "../../client/components/MemberIcon"
 
 const reunions = {
   features: [
@@ -65,7 +65,6 @@ test("MemberIcon", () => {
   let component = renderer.create(
     <MemberIcon text="d" summaryCounts={summaryCounts} reunionsForMember={reunionsForMember}></MemberIcon>
   )
-
   expect(component).toMatchSnapshot()
 })
 

@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import MemberTable from "../../src/components/MemberTable"
+import MemberTable from "../../client/components/MemberTable"
 
 const summaryCounts = {
     "j": { "four": 5, "three": 4, "two": 4 },

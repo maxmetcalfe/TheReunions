@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import ReunionList from "../../src/components/ReunionList"
+import ReunionList from "../../client/components/ReunionList"
 
 test("ReunionList", () => {
   let reunions = {

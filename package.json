@@ -2,7 +2,7 @@
   "name": "the-reunions",
   "version": "1.0.0",
   "description": "A web app for The Reunions.",
-  "main": "server.js",
+  "main": "server/index.js",
   "author": "Max Metcalfe",
   "license": "MIT",
   "dependencies": {
@@ -17,7 +17,7 @@
     "build": "webpack --config webpack.config.js --display-error-details",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-local": "jest --coverage",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server/index.js",
     "dev": "npm run start & webpack-dev-server --hot --inline",
     "data": "python scripts/format_data.py"
   },
