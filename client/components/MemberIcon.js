@@ -12,7 +12,6 @@ class MemberIcon extends Component {
   }
 
   selectMemberReunions(e) {
-    console.log("SELECTING");
     // Unselect all reunions on the map.
     this.resetMap();
     // Send the selected element to the parent App.
