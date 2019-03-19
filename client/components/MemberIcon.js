@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import resetMap from "../utils/resetMap"
 
 var CLASS_NAME = "member-icon";
 var SELECTED_CLASS_NAME = "member-icon selected";
@@ -11,9 +12,13 @@ class MemberIcon extends Component {
     this.state = {selected: false};
   }
 
+  componentDidMount() {
+    this.map = document.getElementById("map");
+  }
+
   selectMemberReunions(e) {
     // Unselect all reunions on the map.
-    this.resetMap();
+    resetMap(this.map);
     // Send the selected element to the parent App.
     this.props.setSelection(this);
     // Tag this MemberIcon as selected.
@@ -21,13 +26,6 @@ class MemberIcon extends Component {
     e.reunions.forEach(function(reunion) {
         var marker = document.getElementById(reunion.element_id);
         marker.classList.add("picked");
-    })
-  }
-
-  resetMap() {
-    var selectedReunions = map.querySelectorAll(".picked");
-    selectedReunions.forEach(function(r) {
-      r.classList.remove("picked");
     })
   }
 

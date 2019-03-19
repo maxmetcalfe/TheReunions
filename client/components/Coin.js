@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import resetMap from "../utils/resetMap"
 
 var CLASS_NAME = "coin";
 var SELECTED_CLASS_NAME = "coin selected";
@@ -10,9 +11,13 @@ class Coin extends Component {
     this.reunions = props.reunions;
   }
 
+  componentDidMount() {
+    this.map = document.getElementById("map");
+  }
+
   selectMemberReunionsByType(e) {
     // Unselect all reunions on the map.
-    this.resetMap();
+    resetMap(this.map);
     // Send the selected element to the parent App.
     this.props.setSelection(this);
     // Tag this coin as selected.
@@ -31,13 +36,6 @@ class Coin extends Component {
       return SELECTED_CLASS_NAME + " " + this.props.type;
     }
     return CLASS_NAME + " " + this.props.type;
-  }
-
-  resetMap() {
-    var selectedReunions = map.querySelectorAll(".picked");
-    selectedReunions.forEach(function(r) {
-      r.classList.remove("picked");
-    })
   }
 
   displayAsSelected() {
