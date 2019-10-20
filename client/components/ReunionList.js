@@ -1,14 +1,21 @@
 import React, { Component } from "react";
+import constants from "../constants";
+
 
 class ReunionList extends Component {
 
   render() {
+
+    if (!this.props.reunions) {
+      return null;
+    }
+
     return (
-      <div id="reunion-list" ref="element">
+      <div id="reunion-list">
         <table>
           <tbody>
-            {this.props.reunions.features.reverse().map((reunion, index) => (
-              <tr className={reunion.properties.category} key={index}>
+            {this.props.reunions.features.map((reunion, index) => (
+              <tr className={constants.CATEGORIES[reunion.properties.category] || constants.CATEGORIES["Cat 4"]} key={index}>
                 <td key={index}>{reunion.properties.location} - {reunion.properties.name}</td>
               </tr>
             ))}

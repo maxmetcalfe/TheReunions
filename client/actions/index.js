@@ -1,3 +1,5 @@
-export const fetchData = ({
-    type: "FETCH_DATA"
+
+export const dataLoaded = data => ({
+  type: "DATA_LOADED",
+  data
 })

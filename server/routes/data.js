@@ -21,7 +21,7 @@ function checkWorksheetTitle(worksheet) {
 let sheet
 let reunions = []
 
-router.use("/", function(req, res) {
+router.get("/", function(req, res) {
   async.series([
     function getSheet(step) {
       googleSheet.getInfo(function(err, info) {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MemberTable from './MemberTable';
+import constants from "../constants";
 
 // MapBox info
 var mapStyle = "mapbox://styles/mapbox/dark-v9";
@@ -28,14 +29,18 @@ class MapContainer extends Component {
     var self = this;
     map.on("load", function() {
       self.props.reunions.features.forEach(function(reunion) {
-  
+
+        if (!reunion.properties.location) {
+          return;
+        }
+
         // Create outer element to handle click area.
         var elementOuter = document.createElement("div");
         elementOuter.className = "marker";
   
         // Create inner element for the actual marker dislay.
         var elementInner = document.createElement("div");
-        elementInner.classList.add(reunion.properties.category);
+        elementInner.classList.add(constants.CATEGORIES[reunion.properties.category] || constants.CATEGORIES["Cat 4"]);
         elementInner.id = reunion.properties.element_id;
   
         // Add the inner element to the outer element.
@@ -44,7 +49,7 @@ class MapContainer extends Component {
         // Hack: Popouts were not working with touch event.
         // Adding an empty event listener fixes the problem :)
         elementOuter.addEventListener("click", function() {});
-  
+
         // make a marker for each feature and add to the map
         new mapboxgl.Marker(elementOuter)
         .setLngLat(reunion.geometry.coordinates)

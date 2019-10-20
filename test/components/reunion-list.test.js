@@ -9,21 +9,21 @@ test("ReunionList", () => {
         properties: {
           name: "Boston 2014",
           location: "Boston",
-          category: "four"
+          category: "Cat 4"
         }
       },
       {
         properties: {
           name: "Charleston 2012",
           location: "Charleston",
-          category: "three"
+          category: "Cat 3"
         }
       },
       {
         properties: {
           name: "New York 2011",
           location: "New York",
-          category: "two"
+          category: "Cat 2"
         }
       }
     ]
@@ -51,6 +51,15 @@ test("ReunionList, single reunion", () => {
 
   let component = renderer.create(
     <ReunionList reunions={reunions} ></ReunionList>
+  )
+
+  expect(component).toMatchSnapshot()
+})
+
+test("ReunionList, null reunions", () => {
+
+  let component = renderer.create(
+    <ReunionList ></ReunionList>
   )
 
   expect(component).toMatchSnapshot()

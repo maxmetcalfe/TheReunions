@@ -9,16 +9,18 @@
     "async": "2.6.1",
     "bootstrap": "^3.4.0",
     "express": "^4.9.8",
-    "react": "16.0.0",
-    "react-dom": "16.0.1",
-    "google-spreadsheet": "2.0.6"
+    "google-spreadsheet": "2.0.6",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js --display-error-details",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-local": "jest --coverage",
     "start": "NODE_ENV=production node server/index.js",
-    "dev": "npm run start & webpack-dev-server --hot --inline",
+    "dev": "webpack-dev-server --hot --inline",
     "data": "python scripts/format_data.py"
   },
   "engines": {

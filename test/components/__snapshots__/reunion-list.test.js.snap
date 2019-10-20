@@ -7,12 +7,12 @@ exports[`ReunionList 1`] = `
   <table>
     <tbody>
       <tr
-        className="two"
+        className="four"
       >
         <td>
-          New York
+          Boston
            - 
-          New York 2011
+          Boston 2014
         </td>
       </tr>
       <tr
@@ -25,18 +25,20 @@ exports[`ReunionList 1`] = `
         </td>
       </tr>
       <tr
-        className="four"
+        className="two"
       >
         <td>
-          Boston
+          New York
            - 
-          Boston 2014
+          New York 2011
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 `;
+
+exports[`ReunionList, null reunions 1`] = `null`;
 
 exports[`ReunionList, single reunion 1`] = `
 <div
@@ -45,7 +47,7 @@ exports[`ReunionList, single reunion 1`] = `
   <table>
     <tbody>
       <tr
-        className="Cat 4"
+        className="four"
       >
         <td>
           Boston
