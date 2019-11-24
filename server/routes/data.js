@@ -37,7 +37,7 @@ router.get("/", function(req, res) {
     function readWorksheet(step) {
       sheet.getRows({
         offset: 2,
-        "limit": 100
+        limit: 200
       }, function(err, rows) {
         rows.forEach(function(row) {
           var reunion = {}
@@ -48,11 +48,11 @@ router.get("/", function(req, res) {
         })
 
         res.json(reunions)
-        return
         step()
+        return
       })
     }
-  ], function (err, result) {
+  ], function (err) {
     res.sendStatus(err)
   })
 })

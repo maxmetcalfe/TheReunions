@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import constants from "../constants";
 
 
@@ -25,5 +26,9 @@ class ReunionList extends Component {
     );
   }
 }
+
+ReunionList.propTypes = {
+  reunions: PropTypes.object
+};
 
 export default ReunionList;

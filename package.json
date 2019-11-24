@@ -10,6 +10,7 @@
     "bootstrap": "^3.4.0",
     "express": "^4.9.8",
     "google-spreadsheet": "2.0.6",
+    "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-redux": "^7.1.1",
@@ -17,8 +18,10 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js --display-error-details",
+    "pretest": "npm run lint",
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test-local": "jest --coverage",
+    "test-local": "npm run pretest && jest --coverage",
+    "lint": "eslint .",
     "start": "NODE_ENV=production node server/index.js",
     "dev": "webpack-dev-server --hot --inline",
     "data": "python scripts/format_data.py"
@@ -35,6 +38,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^3.0.2",
     "css-loader": "^0.28.7",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.6.0",
     "style-loader": "^0.19.0",

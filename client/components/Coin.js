@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import resetMap from "../utils/resetMap"
 
 var CLASS_NAME = "coin";
@@ -51,5 +52,14 @@ class Coin extends Component {
     );
   }
 }
+
+Coin.propTypes = {
+  counts: PropTypes.number,
+  reunions: PropTypes.array,
+  selection: PropTypes.object,
+  setSelection: PropTypes.func,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string
+};
 
 export default Coin;

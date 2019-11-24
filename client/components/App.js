@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Header from './Header';
 import MapContainer from './MapContainer';
@@ -84,7 +85,12 @@ class App extends Component {
 
 const mapStateToProps = (data, dispatch) => {
   return { data, dispatch: dispatch };
-}
+};
+
+App.propTypes = {
+  data: PropTypes. object.isRequired,
+  dispatch: PropTypes.func
+};
 
 export default connect(
   mapStateToProps

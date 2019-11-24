@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import MemberIcon from './MemberIcon';
 import CoinBox from './CoinBox';
 
@@ -29,5 +30,13 @@ class MemberCell extends Component {
     );
   }
 }
+
+MemberCell.propTypes = {
+  reunions: PropTypes.array.isRequired,
+  selection: PropTypes.object,
+  counts: PropTypes.object.isRequired,
+  member: PropTypes.string.isRequired,
+  setSelection: PropTypes.func
+};
 
 export default MemberCell;

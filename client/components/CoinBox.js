@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Coin from './Coin';
 
 class CoinBox extends Component {
@@ -20,6 +21,15 @@ class CoinBox extends Component {
       </div>
     );
   }
+}
+
+CoinBox.propTypes = {
+  member: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  counts: PropTypes.object.isRequired,
+  reunions: PropTypes.array.isRequired,
+  selection: PropTypes.object,
+  setSelection: PropTypes.func
 }
 
 export default CoinBox;

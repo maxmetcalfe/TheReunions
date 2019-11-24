@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import MemberTable from './MemberTable';
 import constants from "../constants";
 
@@ -90,6 +91,13 @@ class MapContainer extends Component {
         </div>
       );
   }
+}
+
+MapContainer.propTypes = {
+  summaryCounts: PropTypes.object.isRequired,
+  reunionsForMember: PropTypes.object.isRequired,
+  selection: PropTypes.object,
+  setSelection: PropTypes.func
 }
 
 export default MapContainer;

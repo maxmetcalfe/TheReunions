@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import MemberCell from './MemberCell';
 
 class MemberTable extends Component {
@@ -21,5 +22,12 @@ class MemberTable extends Component {
     );
   }
 }
+
+MemberTable.propTypes = {
+  selection: PropTypes.object,
+  reunionsForMember: PropTypes.object.isRequired,
+  setSelection: PropTypes.func,
+  summaryCounts: PropTypes.object.isRequired
+};
 
 export default MemberTable;

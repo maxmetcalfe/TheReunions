@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import resetMap from "../utils/resetMap"
 
 var CLASS_NAME = "member-icon";
@@ -44,6 +45,14 @@ class MemberIcon extends Component {
       </div>
     );
   }
+}
+
+MemberIcon.propTypes = {
+  reunions: PropTypes.array,
+  text: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  selection: PropTypes.object,
+  setSelection: PropTypes.func
 }
 
 export default MemberIcon;
