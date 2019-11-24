@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import resetMap from "../utils/resetMap"
+import constants from "../constants";
 
 var CLASS_NAME = "coin";
 var SELECTED_CLASS_NAME = "coin selected";
@@ -25,8 +26,8 @@ class Coin extends Component {
     this.setState({selected: true});
     var self = this;
     e.reunions.forEach(function(reunion) {
-      if (reunion.category === self.props.type) {
-        var marker = document.getElementById(reunion.element_id);
+      if (constants.CATEGORIES[reunion.properties.category] === self.props.type) {
+        var marker = document.getElementById(reunion.properties.element_id);
         marker.classList.add("picked");
       }
     })

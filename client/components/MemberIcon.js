@@ -25,7 +25,7 @@ class MemberIcon extends Component {
     // Tag this MemberIcon as selected.
     this.setState({selected: true});
     e.reunions.forEach(function(reunion) {
-        var marker = document.getElementById(reunion.element_id);
+        var marker = document.getElementById(reunion.properties.element_id);
         marker.classList.add("picked");
     })
   }
