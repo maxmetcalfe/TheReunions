@@ -6,17 +6,21 @@ class CategoryDescriptions extends Component {
     super();
     this.baseClass = "coin";
     this.descriptions = {
+      five: {
+        value: 5,
+        text: "All four members present + special occasion"
+      },
       four: {
         value: 4,
-        text: "All four members present."
+        text: "All four members present"
       },
       three: {
         value: 3,
-        text: "Three members present."
+        text: "Three members present"
       }, 
       two: {
         value: 2,
-        text: "Two members present."
+        text: "Two members present"
       }
     };
   }

@@ -12,7 +12,7 @@ body h1 {
 }
 
 body h2 {
-  color: rgb(255, 178, 5);
+  color: rgb(50,205,50);
   text-align: center;
 }
 
@@ -233,6 +233,23 @@ body h2 {
   cursor: pointer;
 }
 
+/* Cat 5 Reunion */
+.five {
+  border-color: rgb(255, 178, 5);
+  color: rgb(255, 178, 5);
+}
+
+/* Cat 5 Reunion Hover */
+.five:hover {
+  background-color: rgb(255, 178, 5);
+}
+
+/* Cat 5 Reunion Selected */
+.five.selected {
+  background-color: rgb(255, 178, 5);
+  color: black;
+}
+
 /* Cat 4 Reunion */
 .four {
   border-color: rgb(255, 250, 0);
@@ -286,11 +303,11 @@ body h2 {
 
 /* Align coins within coin-box. */
 .coin-box .coin:first-of-type {
-  margin-left: 80px;
+  margin-left: 65px;
 }
 
 .coin-box .coin:last-of-type {
-  margin-right: 80px;
+  margin-right: 65px;
 }
 
 /* All coins should have black font on hover. */
@@ -314,6 +331,10 @@ body h2 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+
+.marker div.five {
+  background-color: rgb(255, 178, 5);
 }
 
 .marker div.four {
@@ -380,6 +401,10 @@ body h2 {
 
 .category-descriptions-div {
   display: block;
+}
+
+.category-descriptions div.coin.five {
+  background-color: rgb(255, 178, 5);
 }
 
 .category-descriptions div.coin.four {

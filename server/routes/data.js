@@ -19,9 +19,9 @@ function checkWorksheetTitle(worksheet) {
 }
 
 let sheet
-let reunions = []
 
 router.get("/", function(req, res) {
+  let reunions = []
   async.series([
     function getSheet(step) {
       googleSheet.getInfo(function(err, info) {
