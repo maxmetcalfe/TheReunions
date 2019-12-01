@@ -33,6 +33,8 @@ function createElementId(reunion, index) {
 }
 
 export default function formatData(data) {
+  console.log("Transforming data....");
+  console.log(data.transformed);
   if (!data.length) {
     return data;
   }
@@ -61,6 +63,7 @@ export default function formatData(data) {
   }, []);
 
   return {
+    transformed: true,
     reunions: {
       features: transformedReunions,
       type: "FeatureCollection"
