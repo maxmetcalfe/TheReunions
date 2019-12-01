@@ -429,6 +429,10 @@ body h2 {
   overflow-y: auto;
 }
 
+#reunion-list::-webkit-scrollbar {
+  display: none;
+}
+
 @media only screen and (max-width: 900px) {
 
   #reunion-list {
