@@ -48,7 +48,6 @@ router.get("/", function(req, res) {
         })
 
         res.json(reunions)
-        step()
         return
       })
     }
