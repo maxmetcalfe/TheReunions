@@ -34,7 +34,7 @@ router.get("/", function(req, res) {
       })
     },
 
-    function readWorksheet(step) {
+    function readWorksheet() {
       sheet.getRows({
         offset: 2,
         limit: 200

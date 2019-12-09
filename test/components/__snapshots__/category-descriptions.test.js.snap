@@ -8,6 +8,22 @@ exports[`CategoryDescriptions 1`] = `
     <tr>
       <td>
         <div
+          className="coin five"
+        >
+          5
+        </div>
+      </td>
+      <td>
+        <h3
+          className="five"
+        >
+          All four members present + special occasion
+        </h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
           className="coin four"
         >
           4
@@ -17,7 +33,7 @@ exports[`CategoryDescriptions 1`] = `
         <h3
           className="four"
         >
-          All four members present.
+          All four members present
         </h3>
       </td>
     </tr>
@@ -33,7 +49,7 @@ exports[`CategoryDescriptions 1`] = `
         <h3
           className="three"
         >
-          Three members present.
+          Three members present
         </h3>
       </td>
     </tr>
@@ -49,7 +65,7 @@ exports[`CategoryDescriptions 1`] = `
         <h3
           className="two"
         >
-          Two members present.
+          Two members present
         </h3>
       </td>
     </tr>
