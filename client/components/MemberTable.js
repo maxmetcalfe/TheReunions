@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import MemberCell from './MemberCell';
 
-class MemberTable extends Component {
+export class MemberTable extends Component {
 
   render() {
     return (
@@ -14,7 +14,6 @@ class MemberTable extends Component {
                 counts={this.props.summaryCounts[name]}
                 reunions={this.props.reunionsForMember[name]}
                 selection={this.props.selection}
-                setSelection={this.props.setSelection}
               />
           ))}
         </tbody>
@@ -26,7 +25,6 @@ class MemberTable extends Component {
 MemberTable.propTypes = {
   selection: PropTypes.object,
   reunionsForMember: PropTypes.object.isRequired,
-  setSelection: PropTypes.func,
   summaryCounts: PropTypes.object.isRequired
 };
 

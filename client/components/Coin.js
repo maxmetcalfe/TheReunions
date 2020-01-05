@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import resetMap from "../utils/resetMap"
+import { connect } from "react-redux";
 import constants from "../constants";
+import { selectReunions } from "../actions";
 
 var CLASS_NAME = "coin";
 var SELECTED_CLASS_NAME = "coin selected";
 
-class Coin extends Component {
+export class Coin extends Component {
 
   constructor(props) {
     super(props);
@@ -18,19 +19,19 @@ class Coin extends Component {
   }
 
   selectMemberReunionsByType(e) {
-    // Unselect all reunions on the map.
-    resetMap(this.map);
-    // Send the selected element to the parent App.
-    this.props.setSelection(this);
-    // Tag this coin as selected.
-    this.setState({selected: true});
+    var selectedReunions = [];
     var self = this;
     e.reunions.forEach(function(reunion) {
       if (constants.CATEGORIES[reunion.properties.category] === self.props.type) {
+        selectedReunions.push(reunion);
         var marker = document.getElementById(reunion.properties.element_id);
         marker.classList.add("picked");
       }
     })
+    // Dispatch the selection.
+    this.props.dispatch(selectReunions({ reunions: selectedReunions, element: this }));
+    // Tag this coin as selected.
+    this.setState({ selected: true });
   }
 
   className() {
@@ -41,7 +42,7 @@ class Coin extends Component {
   }
 
   displayAsSelected() {
-    if (this.props.selection && this.props.id === this.props.selection.props.id) {
+    if (this.props.selection && this.props.id === this.props.selection.element.props.id) {
       return true;
     }
     return false;
@@ -58,9 +59,15 @@ Coin.propTypes = {
   counts: PropTypes.number,
   reunions: PropTypes.array,
   selection: PropTypes.object,
-  setSelection: PropTypes.func,
   type: PropTypes.string.isRequired,
-  id: PropTypes.string
+  id: PropTypes.string,
+  dispatch: PropTypes.func
 };
 
-export default Coin;
+const mapStateToProps = (data, dispatch) => {
+  return { data, dispatch: dispatch };
+};
+
+export default connect(
+  mapStateToProps
+)(Coin);

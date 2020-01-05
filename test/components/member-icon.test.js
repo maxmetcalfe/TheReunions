@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import MemberIcon from "../../client/components/MemberIcon"
+import { MemberIcon } from "../../client/components/MemberIcon"
 
 const reunions = {
   features: [

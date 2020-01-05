@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import MemberIcon from './MemberIcon';
 import CoinBox from './CoinBox';
 
-class MemberCell extends Component {
+export class MemberCell extends Component {
 
   render() {
     let memberIconKey = this.props.member + "-member-icon";
@@ -16,14 +16,12 @@ class MemberCell extends Component {
             text={this.props.member}
             reunions={this.props.reunions}
             selection={this.props.selection}
-            setSelection={this.props.setSelection}
           />
           <CoinBox name={coinBoxKey}
             member={this.props.member}
             counts={this.props.counts}
             reunions={this.props.reunions}
             selection={this.props.selection}
-            setSelection={this.props.setSelection}
           />
         </td>
       </tr>
@@ -35,8 +33,7 @@ MemberCell.propTypes = {
   reunions: PropTypes.array.isRequired,
   selection: PropTypes.object,
   counts: PropTypes.object.isRequired,
-  member: PropTypes.string.isRequired,
-  setSelection: PropTypes.func
+  member: PropTypes.string.isRequired
 };
 
 export default MemberCell;

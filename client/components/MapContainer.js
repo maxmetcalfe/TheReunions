@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import MemberTable from './MemberTable';
 import constants from "../constants";
+import resetMap from "../utils/resetMap"
 
 // MapBox info
-var mapStyle = "mapbox://styles/mapbox/dark-v9";
-var startingZoom = 3;
-var startingCenter = [-97.314835, 37.697948];
+const MAP_STYLE = "mapbox://styles/mapbox/dark-v9";
+const STARTING_ZOOM = 3;
+const STARTING_CENTER = [-97.314835, 37.697948];
+const SELECTION_PADDING = 50;
 mapboxgl.accessToken = "pk.eyJ1IjoibWF4bWV0Y2FsZmUiLCJhIjoiY2o3aWhnazV5MXR3ZTJ3cXViYXRucWJocCJ9.b1B3HrGStBqybxmCEafK0Q"
 
 class MapContainer extends Component {
@@ -20,9 +22,9 @@ class MapContainer extends Component {
   componentDidMount() {
     var map = new mapboxgl.Map({
         container: "map", // container id
-        style: mapStyle, // stylesheet location
-        center: startingCenter, // starting position [lng, lat]
-        zoom: startingZoom
+        style: MAP_STYLE, // stylesheet location
+        center: STARTING_CENTER, // starting position [lng, lat]
+        zoom: STARTING_ZOOM
     });
     map.addControl(new mapboxgl.NavigationControl());
     this.map = map;
@@ -60,6 +62,16 @@ class MapContainer extends Component {
       });
     })
   }
+  
+  selectReunions(selection) {
+    var bounds = new mapboxgl.LngLatBounds();
+    selection.reunions.forEach(function(reunion) {
+        bounds.extend(reunion.geometry.coordinates);
+        var marker = document.getElementById(reunion.properties.element_id);
+        marker.classList.add("picked");
+    })
+    this.map.fitBounds(bounds, { padding: SELECTION_PADDING });
+  }
 
   hidePanel() {
     this.setState({ panelVisible: false });
@@ -74,6 +86,10 @@ class MapContainer extends Component {
   }
 
   render() {
+      if (this.props.selection && this.mapElement) {
+          resetMap(this.mapElement);
+          this.selectReunions(this.props.selection);
+      }
       return (
         <div id="map-container">
           <div id="map"></div>
@@ -82,7 +98,6 @@ class MapContainer extends Component {
             <MemberTable summaryCounts={this.props.summaryCounts}
               reunionsForMember={this.props.reunionsForMember}
               selection={this.props.selection}
-              setSelection={this.props.setSelection.bind(this)}
             />
             <div id="panel-slider" onClick={this.hidePanel.bind(this)}>
               <div></div>
@@ -96,8 +111,7 @@ class MapContainer extends Component {
 MapContainer.propTypes = {
   summaryCounts: PropTypes.object.isRequired,
   reunionsForMember: PropTypes.object.isRequired,
-  selection: PropTypes.object,
-  setSelection: PropTypes.func
+  selection: PropTypes.object
 }
 
 export default MapContainer;

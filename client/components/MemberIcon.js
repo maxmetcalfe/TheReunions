@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import resetMap from "../utils/resetMap"
+import { connect } from "react-redux";
+import { selectReunions } from "../actions";
 
 var CLASS_NAME = "member-icon";
 var SELECTED_CLASS_NAME = "member-icon selected";
 
-class MemberIcon extends Component {
+export class MemberIcon extends Component {
 
   constructor(props) {
     super(props);
     this.reunions = props.reunions;
-    this.state = {selected: false};
   }
 
   componentDidMount() {
@@ -18,20 +18,12 @@ class MemberIcon extends Component {
   }
 
   selectMemberReunions(e) {
-    // Unselect all reunions on the map.
-    resetMap(this.map);
-    // Send the selected element to the parent App.
-    this.props.setSelection(this);
-    // Tag this MemberIcon as selected.
-    this.setState({selected: true});
-    e.reunions.forEach(function(reunion) {
-        var marker = document.getElementById(reunion.properties.element_id);
-        marker.classList.add("picked");
-    })
+    // Dispatch the selection.
+    this.props.dispatch(selectReunions({ reunions: e.reunions, element: this }));
   }
 
   displayAsSelected() {
-    if (this.props.selection && this.props.id === this.props.selection.props.id) {
+    if (this.props.selection && this.props.id === this.props.selection.element.props.id) {
       return true;
     }
     return false;
@@ -52,7 +44,14 @@ MemberIcon.propTypes = {
   text: PropTypes.string.isRequired,
   id: PropTypes.string,
   selection: PropTypes.object,
-  setSelection: PropTypes.func
+  dispatch: PropTypes.func
 }
 
-export default MemberIcon;
+const mapStateToProps = (dispatch) => {
+  return { dispatch: dispatch };
+};
+
+export default connect(
+  mapStateToProps
+)(MemberIcon);
+

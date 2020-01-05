@@ -15,7 +15,6 @@ class CoinBox extends Component {
               counts={this.props.counts[type]}
               reunions={this.props.reunions}
               selection={this.props.selection}
-              setSelection={this.props.setSelection}
             />
         ))}
       </div>
@@ -29,7 +28,6 @@ CoinBox.propTypes = {
   counts: PropTypes.object.isRequired,
   reunions: PropTypes.array.isRequired,
   selection: PropTypes.object,
-  setSelection: PropTypes.func
 }
 
 export default CoinBox;

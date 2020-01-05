@@ -7,6 +7,11 @@ export default (state = {}, action) => {
         ...state,
         data: formatData(action.data)
       }
+    case "SELECT_REUNIONS":
+      return {
+        ...state,
+        selection: action.selection
+      }
     default:
       return state;
   }

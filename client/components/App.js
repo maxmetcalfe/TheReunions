@@ -14,13 +14,8 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { selection: null };
     this.state = { mapContainerVisible: false };
     window.app = this;
-  }
-
-  setSelection(selectedItem) {
-    this.setState({selection: selectedItem});
   }
 
   displayMapContainer() {
@@ -49,6 +44,7 @@ class App extends Component {
     let reunions = this.props.data && this.props.data.data && this.props.data.data.reunions;
     let reunionsForMember = this.props.data && this.props.data.data && this.props.data.data.reunionsForMember;
     let summaryCounts = this.props.data && this.props.data.data && this.props.data.data.summaryCounts;
+    let selection = this.props.data && this.props.data.selection;
 
     return (
       <div>
@@ -56,8 +52,7 @@ class App extends Component {
         <MapContainer summaryCounts={summaryCounts}
           reunions={reunions}
           reunionsForMember={reunionsForMember}
-          selection={this.state.selection}
-          setSelection={this.setSelection.bind(this)}
+          selection={selection}
         />
       </div>
     );

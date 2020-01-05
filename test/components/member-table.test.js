@@ -1,6 +1,10 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import MemberTable from "../../client/components/MemberTable"
+import configureStore from "redux-mock-store"
+import { Provider } from "react-redux"
+import { MemberTable } from "../../client/components/MemberTable"
+
+let mockStore = configureStore();
 
 const summaryCounts = {
     "j": { "four": 5, "three": 4, "two": 4 },
@@ -33,8 +37,11 @@ const reunionsForMember = {
 }
 
 test("MemberTable", () => {
+  let store = mockStore({});
   let component = renderer.create(
-    <MemberTable summaryCounts={summaryCounts} reunionsForMember={reunionsForMember} ></MemberTable>
+    <Provider store={store}>
+      <MemberTable summaryCounts={summaryCounts} reunionsForMember={reunionsForMember} ></MemberTable>
+    </Provider>
   )
 
   expect(component).toMatchSnapshot()
