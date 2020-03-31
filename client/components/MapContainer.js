@@ -31,6 +31,11 @@ class MapContainer extends Component {
     this.mapElement = document.getElementById("map");
     var self = this;
     map.on("load", function() {
+
+      // Add the `loaded` class to make the map visible.
+      // We keep it invisible while the map loads.
+      self.mapElement.classList.add("loaded");
+
       self.props.reunions.features.forEach(function(reunion) {
 
         if (!reunion.properties.location) {
