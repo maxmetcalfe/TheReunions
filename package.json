@@ -23,7 +23,7 @@
     "test-local": "npm run pretest && jest --coverage",
     "lint": "eslint .",
     "start": "NODE_ENV=production node server/index.js",
-    "dev": "webpack-dev-server --hot --inline",
+    "dev": "nodemon server/index.js",
     "data": "python scripts/format_data.py"
   },
   "engines": {
@@ -41,12 +41,13 @@
     "eslint": "^6.5.1",
     "eslint-plugin-react": "^7.16.0",
     "jest": "^23.6.0",
+    "nodemon": "^2.0.2",
     "react-test-renderer": "^16.6.0",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^0.19.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": ">=3.1.11"
+    "webpack-dev-middleware": "^3.7.2"
   },
   "heroku-run-build-script": true
 }
