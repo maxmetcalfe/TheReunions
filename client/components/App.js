@@ -64,7 +64,7 @@ class App extends Component {
     // FIX ME: Why is data double nested?
     let hasData = this.props.data && Object.keys(this.props.data).length > 0;
     if (!hasData) {
-      fetch("/data")
+      fetch("/api/data")
         .then((response) => response.json())
         .then((data) => this.props.dispatch(dataLoaded(data)))
         .catch((e) => console.warn("Failed to load data: " + e))

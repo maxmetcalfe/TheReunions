@@ -1,0 +1,6 @@
+{
+  "env": {
+    "WORKSHEET_TITLE": "@worksheet_title",
+    "SHEET_ID": "@sheet_id"
+  }
+}

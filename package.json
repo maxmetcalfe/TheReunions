@@ -29,7 +29,7 @@
     "data": "python scripts/format_data.py"
   },
   "engines": {
-    "node": "6.11.0"
+    "node": "12.x"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

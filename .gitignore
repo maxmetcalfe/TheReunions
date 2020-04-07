@@ -4,3 +4,5 @@ npm-debug.log
 .DS_Store
 client/dist/bundle.js
 client/dist/bundle.js.map
+.now
+.env
