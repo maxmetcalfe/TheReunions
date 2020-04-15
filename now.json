@@ -1,6 +1,7 @@
 {
   "env": {
     "WORKSHEET_TITLE": "@worksheet_title",
-    "SHEET_ID": "@sheet_id"
+    "SHEET_ID": "@sheet_id",
+    "TOKEN": "@token-development-bv7w"
   }
 }
