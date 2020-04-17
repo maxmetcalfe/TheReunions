@@ -1,7 +1,4 @@
-const express = require("express")
-const router = express.Router()
-const GoogleSpreadsheet = require("google-spreadsheet")
-const async = require("async")
+const { GoogleSpreadsheet } = require("google-spreadsheet")
 
 const fields = [
   "name",
@@ -12,47 +9,32 @@ const fields = [
   "members"
 ]
 
-const googleSheet = new GoogleSpreadsheet(process.env.SHEET_ID)
+module.exports = async (req, res) => {
+  // Google Sheets API Auth
+  const googleSheet = new GoogleSpreadsheet("1de_h32ppogTbUuhIxc15wUbeURbAgThVt7tQD2HYgyk")
+  await googleSheet.useServiceAccountAuth({
+    client_email: process.env.CLIENT_EMAIL,
+    private_key: process.env.PRIVATE_KEY
+  });
 
-function checkWorksheetTitle(worksheet) {
-  return worksheet.title === process.env.WORKSHEET_TITLE
-}
+  // Get target worksheet
+  await googleSheet.loadInfo()
+  const sheet = googleSheet.sheetsByIndex.find((sheet) => { return sheet.title === process.env.WORKSHEET_TITLE})
 
-let sheet
-
-
-module.exports = (req, res) => {
-  let reunions = []
-  async.series([
-    function getSheet(step) {
-      googleSheet.getInfo(function(err, info) {
-        sheet = info.worksheets.filter(checkWorksheetTitle)[0]
-        if (!sheet) {
-          res.sendStatus(404)
-          return
-        }
-        step()
-      })
-    },
-
-    function readWorksheet() {
-      sheet.getRows({
-        offset: 2,
-        limit: 200
-      }, function(err, rows) {
-        rows.forEach(function(row) {
-          var reunion = {}
-          fields.forEach(function(field) {
-            reunion[field] = row[field]
-          })
-          reunions.push(reunion)
-        })
-
-        res.json(reunions)
-        return
-      })
-    }
-  ], function (err) {
-    res.sendStatus(err)
+  const rows = await sheet.getRows({
+    offset: 2,
+    limit: 200
   })
+
+  // Assemble data object from rows
+  let reunions = []
+  rows.map((row) => {
+    let reunion = {}
+    fields.map((field) => {
+      reunion[field] = row[field]
+    })
+    reunions.push(reunion)
+  })
+
+  res.json(reunions)
 }
