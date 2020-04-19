@@ -13,13 +13,8 @@ export class MemberIcon extends Component {
     this.reunions = props.reunions;
   }
 
-  componentDidMount() {
-    this.map = document.getElementById("map");
-  }
-
-  selectMemberReunions(e) {
-    // Dispatch the selection.
-    this.props.dispatch(selectReunions({ reunions: e.reunions, element: this }));
+  selectMemberReunions() {
+    this.props.dispatch(selectReunions({ member: this.props.member, element: this }));
   }
 
   displayAsSelected() {
@@ -30,10 +25,10 @@ export class MemberIcon extends Component {
   }
 
   render() {
-    var text = this.props.text.toUpperCase();
+    var member = this.props.member.toUpperCase();
     return (
       <div className={this.displayAsSelected() ? SELECTED_CLASS_NAME : CLASS_NAME} onClick={()=>{this.selectMemberReunions(this.props)}}>
-        {text}
+        {member}
       </div>
     );
   }
@@ -41,7 +36,7 @@ export class MemberIcon extends Component {
 
 MemberIcon.propTypes = {
   reunions: PropTypes.array,
-  text: PropTypes.string.isRequired,
+  member: PropTypes.string,
   id: PropTypes.string,
   selection: PropTypes.object,
   dispatch: PropTypes.func

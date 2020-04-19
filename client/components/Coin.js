@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import constants from "../constants";
 import { selectReunions } from "../actions";
 
 var CLASS_NAME = "coin";
@@ -14,23 +13,8 @@ export class Coin extends Component {
     this.reunions = props.reunions;
   }
 
-  componentDidMount() {
-    this.map = document.getElementById("map");
-  }
-
-  selectMemberReunionsByType(e) {
-    var selectedReunions = [];
-    var self = this;
-    e.reunions.forEach(function(reunion) {
-      if (constants.CATEGORIES[reunion.properties.category] === self.props.type) {
-        selectedReunions.push(reunion);
-        var marker = document.getElementById(reunion.properties.element_id);
-        marker.classList.add("picked");
-      }
-    })
-    // Dispatch the selection.
-    this.props.dispatch(selectReunions({ reunions: selectedReunions, element: this }));
-    // Tag this coin as selected.
+  selectMemberReunionsByType() {
+    this.props.dispatch(selectReunions({ category: this.props.type, element: this }));
     this.setState({ selected: true });
   }
 

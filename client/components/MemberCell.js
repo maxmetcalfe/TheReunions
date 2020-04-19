@@ -13,7 +13,7 @@ export class MemberCell extends Component {
         <td key={this.props.member}>
           <MemberIcon key={memberIconKey}
             id={memberIconKey}
-            text={this.props.member}
+            member={this.props.member}
             reunions={this.props.reunions}
             selection={this.props.selection}
           />

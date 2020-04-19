@@ -4,12 +4,7 @@ import MemberTable from './MemberTable';
 import constants from "../constants";
 import resetMap from "../utils/resetMap"
 
-// MapBox info
-const MAP_STYLE = "mapbox://styles/mapbox/dark-v9";
-const STARTING_ZOOM = 3;
-const STARTING_CENTER = [-97.314835, 37.697948];
-const SELECTION_PADDING = 50;
-mapboxgl.accessToken = "pk.eyJ1IjoibWF4bWV0Y2FsZmUiLCJhIjoiY2o3aWhnazV5MXR3ZTJ3cXViYXRucWJocCJ9.b1B3HrGStBqybxmCEafK0Q"
+const STARTING_CENTER = new mapkit.Coordinate(37.697948, -97.314835)
 
 class MapContainer extends Component {
 
@@ -20,62 +15,50 @@ class MapContainer extends Component {
   }
 
   componentDidMount() {
-    var map = new mapboxgl.Map({
-        container: "map", // container id
-        style: MAP_STYLE, // stylesheet location
-        center: STARTING_CENTER, // starting position [lng, lat]
-        zoom: STARTING_ZOOM
+    mapkit.init({
+      authorizationCallback: function(done) {
+        fetch("/api/token")
+        .then(res => res.text())
+        .then(done);
+      },
     });
-    map.addControl(new mapboxgl.NavigationControl());
+
+    var map = new mapkit.Map("map", {
+      center: STARTING_CENTER,
+      colorScheme: mapkit.Map.ColorSchemes.Dark
+    });
+
     this.map = map;
     this.mapElement = document.getElementById("map");
-    var self = this;
-    map.on("load", function() {
 
-      // Add the `loaded` class to make the map visible.
-      // We keep it invisible while the map loads.
-      self.mapElement.classList.add("loaded");
-
-      self.props.reunions.features.forEach(function(reunion) {
-
-        if (!reunion.properties.location) {
-          return;
+    var annotations = [];
+    this.props.reunions.features.forEach(function(reunion) {
+      if (!reunion.properties.location) {
+        return;
+      }
+      var annotationCoordinate = new mapkit.Coordinate(parseFloat(reunion.geometry.coordinates[1]), parseFloat(reunion.geometry.coordinates[0]));
+      var annotation = new mapkit.MarkerAnnotation(annotationCoordinate, {
+        title: reunion.properties.location,
+        color: constants.MARKER_COLORS[reunion.properties.category],
+        glyphColor: constants.MARKER_GLYPH_COLOR,
+        data: {
+          category: constants.CATEGORIES[reunion.properties.category],
+          members: reunion.properties.members
         }
-
-        // Create outer element to handle click area.
-        var elementOuter = document.createElement("div");
-        elementOuter.className = "marker";
-  
-        // Create inner element for the actual marker dislay.
-        var elementInner = document.createElement("div");
-        elementInner.classList.add(constants.CATEGORIES[reunion.properties.category] || constants.CATEGORIES["Cat 4"]);
-        elementInner.id = reunion.properties.element_id;
-  
-        // Add the inner element to the outer element.
-        elementOuter.appendChild(elementInner);
-  
-        // Hack: Popouts were not working with touch event.
-        // Adding an empty event listener fixes the problem :)
-        elementOuter.addEventListener("click", function() {});
-
-        // make a marker for each feature and add to the map
-        new mapboxgl.Marker(elementOuter)
-        .setLngLat(reunion.geometry.coordinates)
-        .setPopup(new mapboxgl.Popup({ offset: 25 })
-        .setHTML("<h2>" + reunion.properties.location + "</h2><h3>" + reunion.properties.name + "</h3>"))
-        .addTo(map);
-      });
+      })
+      annotations.push(annotation);
     })
+    map.showItems(annotations);
   }
-  
+
   selectReunions(selection) {
-    var bounds = new mapboxgl.LngLatBounds();
-    selection.reunions.forEach(function(reunion) {
-        bounds.extend(reunion.geometry.coordinates);
-        var marker = document.getElementById(reunion.properties.element_id);
-        marker.classList.add("picked");
-    })
-    this.map.fitBounds(bounds, { padding: SELECTION_PADDING });
+    var selectedAnnotations;
+    if (selection.category) {
+      selectedAnnotations = this.map.annotations.filter(function(annotation) { return annotation.data.category === selection.category });
+    } else if (selection.member) {
+      selectedAnnotations = this.map.annotations.filter(function(annotation) { return annotation.data.members.indexOf(selection.member.toUpperCase())});
+    }
+    this.map.showItems(selectedAnnotations);
   }
 
   hidePanel() {
@@ -91,6 +74,7 @@ class MapContainer extends Component {
   }
 
   render() {
+      console.log(this.props.selection);
       if (this.props.selection && this.mapElement) {
           resetMap(this.mapElement);
           this.selectReunions(this.props.selection);
@@ -116,7 +100,8 @@ class MapContainer extends Component {
 MapContainer.propTypes = {
   summaryCounts: PropTypes.object.isRequired,
   reunionsForMember: PropTypes.object.isRequired,
-  selection: PropTypes.object
+  selection: PropTypes.object,
+  reunions: PropTypes.object
 }
 
 export default MapContainer;

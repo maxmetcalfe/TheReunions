@@ -9,7 +9,7 @@ module.exports = {
       "plugin:react/recommended",
     ],
     "globals": {
-        "mapboxgl": "readonly",
+        "mapkit": "readonly",
     },
     "parserOptions": {
         "ecmaFeatures": {

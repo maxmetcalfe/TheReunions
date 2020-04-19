@@ -45,6 +45,7 @@ export default function formatData(data) {
     transformed.properties.location = cur.location;
     transformed.properties.element_id = createElementId(cur, index);
     transformed.properties.category = cur.category;
+    transformed.properties.members = cur.members;
     transformed.geometry.coordinates = [cur.lng, cur.lat];
     acc = [transformed].concat(acc);
 

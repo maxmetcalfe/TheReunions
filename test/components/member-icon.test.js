@@ -63,7 +63,7 @@ const reunionsForMember = {
 
 test("MemberIcon", () => {
   let component = renderer.create(
-    <MemberIcon text="d" summaryCounts={summaryCounts} reunionsForMember={reunionsForMember}></MemberIcon>
+    <MemberIcon member="d" summaryCounts={summaryCounts} reunionsForMember={reunionsForMember}></MemberIcon>
   )
   expect(component).toMatchSnapshot()
 })
