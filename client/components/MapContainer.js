@@ -74,7 +74,6 @@ class MapContainer extends Component {
   }
 
   render() {
-      console.log(this.props.selection);
       if (this.props.selection && this.mapElement) {
           resetMap(this.mapElement);
           this.selectReunions(this.props.selection);
