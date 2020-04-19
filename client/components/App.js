@@ -48,7 +48,7 @@ class App extends Component {
 
     return (
       <div>
-        <a href="#" className={MAP_CONTAINER_CLOSE_BUTTON_CLASS} onClick={this.hideMapContainer.bind(this)}></a>
+        <a className={MAP_CONTAINER_CLOSE_BUTTON_CLASS} onClick={this.hideMapContainer.bind(this)}></a>
         <MapContainer summaryCounts={summaryCounts}
           reunions={reunions}
           reunionsForMember={reunionsForMember}
