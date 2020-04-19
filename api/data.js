@@ -10,11 +10,12 @@ const fields = [
 ]
 
 module.exports = async (req, res) => {
+
   // Google Sheets API Auth
-  const googleSheet = new GoogleSpreadsheet("1de_h32ppogTbUuhIxc15wUbeURbAgThVt7tQD2HYgyk")
+  const googleSheet = new GoogleSpreadsheet(process.env.SHEET_ID)
   await googleSheet.useServiceAccountAuth({
     client_email: process.env.CLIENT_EMAIL,
-    private_key: process.env.PRIVATE_KEY
+    private_key: Buffer.from(process.env.PRIVATE_KEY, "base64")
   });
 
   // Get target worksheet
