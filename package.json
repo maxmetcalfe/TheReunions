@@ -14,8 +14,8 @@
     "react-dom": "16.9.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
-    "webpack": "^4.29.6",
-    "webpack-dev-middleware": "^3.7.2"
+    "webpack": "^5.25.0",
+    "webpack-dev-middleware": "^4.1.0"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js --display-error-details",
@@ -28,7 +28,7 @@
     "data": "python scripts/format_data.py"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -46,7 +46,6 @@
     "react-test-renderer": "^16.6.0",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^0.19.0",
-    "webpack-cli": "^3.3.0"
-  },
-  "heroku-run-build-script": true
+    "webpack-cli": "^4.5.0"
+  }
 }
